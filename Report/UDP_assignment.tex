@@ -1,0 +1,71 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{graphicx}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%tile page
+\begin{titlepage}
+\centering
+{\scshape\LARGE University of Dhaka \par}
+%\vspace{1cm}
+%{\scshape\Large Assignment One\par}
+\vspace{1.5cm}
+{\huge\bfseries Assignment on Implementing Reliable File Transfer over an Unreliable Transport\par}
+\vspace{2cm}
+{\Large\itshape Md.Al-Helal(Roll-51)\\Md.Rashid Ahmed(Roll-15)\par}
+\vfill
+submitted to\par
+{\itshape Dr. Md. Mamun-or-Rashid \\ Professor \\Dr. Shabbir Ahmed \\Professor and Chairperson}
+\vfill
+% Bottom of the page
+{\large \today\par}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Theory
+\section*{Theory}
+There are several types of protocol for reliable data transfer. We have used \textit{Selective Repeat ARQ} here to implement reliable data transfer using datagram socket (UDP socket). In this protocol, if sender has window size of n, receiver has to be window size n/2. Window size is the number sender can send to receiver without any acknowledgement. After sending n (window size) packets to receiver, it waits for receiving acknowledgement from receiver. If any packet from sender is lost or corrupted, same packet is resent to receiver for reliability. If lost, packet is retransmitted after a certain time which is greater than 4 times \textit{rtt} (round trip time). We can find this \textit{rtt} by \textit{ping} command. Receiver sends acknowledgement based on received packet. If the packet is corrupted, it sends negative acknowledgement and waits for receiving it again. Then sender send the same packet again corresponding the negative acknowledgement.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%source code
+\section*{Source Code}
+\lstset{showstringspaces=false}
+\textbf{Server Application}
+\lstinputlisting[language=java]{/home/alhelal/Dropbox/Networking_lab/UDPSenderApplication/src/SenderApplication.java}
+\lstinputlisting[language=java]{/home/alhelal/Dropbox/Networking_lab/UDPSenderApplication/src/SenderThread.java}
+\lstinputlisting[language=java]{/home/alhelal/Dropbox/Networking_lab/UDPSenderApplication/src/PacketGenerator.java}
+\lstinputlisting[language=java]{/home/alhelal/Dropbox/Networking_lab/UDPSenderApplication/src/AcknowledgementReceiver.java}
+
+%---------------------------------------------------------------------------------------------------------------
+\rule{\linewidth}{0.4pt}
+
+\textbf{Receiver Application}
+\lstinputlisting[language=java]{/home/alhelal/Dropbox/Networking_lab/UDPReceiverApplication/src/ReceiverApplication.java}
+\lstinputlisting[language=java]{/home/alhelal/Dropbox/Networking_lab/UDPReceiverApplication/src/ReceiverThread.java}
+\lstinputlisting[language=java]{/home/alhelal/Dropbox/Networking_lab/UDPReceiverApplication/src/PacketReceiver.java}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%sample output
+\section*{Sample Output}
+\begin{figure}[!h]
+  \begin{minipage}{0.45\textwidth}
+  \includegraphics[width = .95\textwidth]{sender}
+  \caption{Sender application}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+  \includegraphics[width = .95\textwidth]{receiver}
+  \caption{Receiver application}
+  \end{minipage}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%problem
+\section*{Problem encountered during implementation}
+\begin{itemize}
+  \item We have used thread to send multiple packets to receiver. Monitoring and handing multhreading was difficult to us.
+  \item After sending each packet, \textit{timer} has to be started. And receiving an acknowledgement reinitializing the corresponding thread with a new packet is also difficult. Designing timer was problematic to us.
+  \item Writing programs need to monitoring each single points. For this, our observation power has to be enhanced.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%conclusion
+\section*{Conclusion}
+Designing reliable data transfer is some combination of small and simple task. But good combination can enhance its ability. Using datagram socket (UDP socket) is not reliable, but we have designed a reliable data transfer protocol using this unreliable service.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
