@@ -194,7 +194,7 @@
 \end{frame}
 \begin{frame}
   \frametitle{QWSRM}
-  \begin{exampleblock}{}
+  \begin{exampleblock}{\phantom{Tp}}
     \centering Quasi Weighted Sum-Rate Maximization Problem
   \end{exampleblock}
 \end{frame}
@@ -250,6 +250,18 @@
     \item $\mathcal{A}$\qquad set of active RRHs
   \end{itemize}
 \end{frame}
+
+\begin{frame}{\phantom{Tp}}
+  \begin{exampleblock}{\phantom{Tp}}
+   \[
+     \gamma_{ub}(\mathcal{Q}) = \Bigg\{\begin{array}{ll}f(\mathbf{c}_{min}),\quad &\mathbf{c}_{min}\in\mathcal{F}\\+\infty,\quad &otherwise\\\end{array}	
+    \]
+    \[
+     \gamma_{lb}(\mathcal{Q}) = \Bigg\{\begin{array}{ll}f(\mathbf{c}_{max}),\quad &\mathbf{c}_{max}\in\mathcal{F}\\+\infty,\quad &otherwise\\\end{array}	
+     \]
+  \end{exampleblock}
+\end{frame}
+
 \begin{frame}[fragile]
   \footnotesize
     \begin{block}{BnB algorithm for QWSRM problem}
