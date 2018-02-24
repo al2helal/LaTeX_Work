@@ -75,7 +75,7 @@
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Delay equation}
+  \frametitle{System Model}
   \begin{exampleblock}{Delay}
     \[
       d_{i} = \frac{1}{\mu_{i}- \lambda_{i}} + \frac{1}{c_{i} - \lambda_{i}}
@@ -91,7 +91,7 @@
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Equation}
+  \frametitle{System Model}
   \begin{exampleblock}{Recieved signal at UE $i$}
     \[
       \hat{x_{i}} = \sum_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{ij}x_{i} + \sum_{k\neq i}^{N}\sum_{j\in{A}}^{}h_{ij}^{H}w_{kj}x_{k} + \delta_{i}
@@ -108,7 +108,7 @@
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Equation}
+  \frametitle{System Model}
   \begin{exampleblock}{Signal-to-Interference-plus-Noise-Ratio(SINR) at UE $i$}
     \[
 %     \text{SINR}_{i}(A) = \frac{\lvert\sum_{j\in{A}}^{}h_{ij}^{H}w_{ij}\rvert^2}{\sigma_{i}^2 + \sum{k\neq i}^{N}
@@ -125,7 +125,7 @@
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Achieveable rate $c_{i}$}
+  \frametitle{System Model}
   \begin{exampleblock}{The achieveable rate $c_{i}$ of UE $i$ should satisfy}
     \[
       c_{i} \leq B_{i}\log(1+\text{SINR}_{i}(\mathcal{A})) 
@@ -151,7 +151,7 @@
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Optimization Problem}
+  \frametitle{Problem Formulation}
   \vspace*{-2.5\baselineskip}
   \begin{columns}[t]
     \begin{column}{0.62\linewidth}
@@ -260,9 +260,15 @@
      \gamma_{lb}(\mathcal{Q}) = \Bigg\{\begin{array}{ll}f(\mathbf{c}_{max}),\quad &\mathbf{c}_{max}\in\mathcal{F}\\+\infty,\quad &otherwise\\\end{array}	
      \]
   \end{exampleblock}
+  \begin{itemize}
+    \item $\mathbf{c}_{min} = \begin{bmatrix}c_{1,min},\dots,c_{N,min}\end{bmatrix}^T$
+    \item $\mathbf{c}_{max} = \begin{bmatrix}c_{1,max},\dots,c_{N,max}\end{bmatrix}^T$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
+%\begin{frame}[fragile]{\phantom{Tp}}
+ % \vspace*{-2\baselineskip}
   \footnotesize
     \begin{block}{BnB algorithm for QWSRM problem}
         \begin{algorithmic}
