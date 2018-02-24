@@ -170,7 +170,7 @@
   %    4545
   \]
   \[
-    c_i{i} \leq B_{i}\log(1+SINR_{i}(\mathcal{A}))
+    c_i{i} \leq B_{i}\log(1+\text{SINR}_{i}(\mathcal{A}))
   \]
   \[
     \sum_{i=1}^{N}w_{ij}^{H}w_{ij}\leq E_{i},\quad \forall i\in \mathcal{N}, \quad \forall j\in \mathcal{L}
@@ -191,6 +191,64 @@
   \end{itemize}
 \end{column}
 \end{columns}
+\end{frame}
+\begin{frame}
+  \frametitle{QWSRM}
+  \begin{exampleblock}{}
+    \centering Quasi Weighted Sum-Rate Maximization Problem
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quasi Weighted Sum-Rate Maximization Problem}
+  \begin{exampleblock}{QWSRM}
+    \[
+      \min_{c_{i},w_{ij}} \sum_{i=1}^{N}-\varepsilon_{i}c_{i}
+    \]
+ % \end{exampleblock}
+    subject to,
+ % \begin{exampleblock}{}
+    \[
+      c_{i} \leq B_{i}\log(1+\text{SINR}_{i}(\mathcal{A})),\quad \forall i\in \mathcal{N}
+    \]
+    \[
+      \sum_{i=1}^{N}w_{ij}^{H}w_{ij}\leq E_{i},\quad \forall j\in \mathcal{A}
+    \]
+  \end{exampleblock}
+  \begin{itemize}
+    \item $\varepsilon_{i}$\quad an arbitrary nonnegative weight
+    \item $c_{i}$\quad transmission rate
+    \item $B_{i}$\qquad bandwidth for UE $i$
+    \item $\mathcal{A}$\qquad set of active RRHs
+    \item $E_{j}$\quad maximum power on a link
+    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
+    %\item SINR\qquad Signal-to-Interference-plus-Noise-Ratio
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Generalization of WSRM}
+  \vspace*{-.5\baselineskip}
+  \begin{exampleblock}{}
+    \[
+      \min_{c_{i},w_{ij}} f(\mathbf{c})
+    \]
+    subject to,
+    \[
+      \sum_{i=1}^{N}w_{ij}^{H}w_{ij}\leq E_{i},\quad \forall j\in \mathcal{A}
+    \]
+  \end{exampleblock}
+  Where the objective function $f(\mathbf{c})$, for $0\leq\mathbf{c}\leq\bar{\mathbf{c}}$ has the following properties:
+  \begin{itemize}
+    \item $f(\mathbf{c})$ is a function only of $\mathbf{c}$, and
+    \item $f(\mathbf{c})<\infty$ is continuously differentiable, and
+    \item $f(\mathbf{c})$ is convex in the feasible region
+    \item $\mathbf{c} = \begin{bmatrix}c_{1},\dots,c_{N}\end{bmatrix}^T$
+    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
+    \item $c_{i}$\qquad transmission rate
+    \item $E_{j}$\qquad maximum power on a link
+    \item $\mathcal{A}$\qquad set of active RRHs
+  \end{itemize}
 \end{frame}
 \begin{frame}[fragile]
   \footnotesize
