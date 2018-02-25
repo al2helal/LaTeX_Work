@@ -22,7 +22,7 @@
   \includegraphics[width=1cm,height=1cm,keepaspectratio]{Image/GNR.png}%
 }
 \begin{document}
-  \title{Cross-Layer  Resource  Allocation with  elastic service scaling in Cloud Radio access network}
+  \title{Cross-Layer  Resource  Allocation With  Elastic Service Scaling in Cloud Radio Access Network}
   \author[alhelal \& Jobayed Ullah]{
   \parbox{2.5cm}{
 \centering Md.Al-Helal\\Roll:SH-51}\hspace{1cm}
@@ -34,7 +34,7 @@
 \begin{frame}
   \maketitle
 \end{frame}
-  \title{Cross-Layer  Resource  Allocation with  elastic service scaling in Cloud Radio access network}
+  \title{Cross-Layer  Resource  Allocation With  Elastic Service Scaling in Cloud Radio Access Network}
   \author{Jianhua Tang\\ Wee Pen Tay\\ Tony Q. S. Quek}
 \institute{IEEE Transactions on Wireless Communications, vol 14, no. 9}
 \date{September 2015}
@@ -60,9 +60,8 @@
     \item $\mu_{i}$\quad service rate
     \item $c_{i}$\quad transmission rate
     \item $\lambda_{i}$\quad arrival rate
-    \item $\varphi_{i}{\mu_{i}} = k_{i}\mu_{i}^{a_{i}}$
-    \item $k_{i} > 0$
-    \item $a_{i} > 1$
+    \item $\varphi_{i}{(\mu_{i})} = k_{i}\mu_{i}^{a_{i}}$
+    \item $k_{i} > 0$ and $a_{i} > 1$ are positive constants.
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -70,7 +69,7 @@
   Minimizing system power consumtion in C-RAN, which consists of three components:
   \begin{itemize}
   \item Power consumption in BBU pool
-  \item Power consumption in fibre links
+  \item Power consumption in fiber links
   \item Power consumption in RRHs
   \end{itemize}
 \end{frame}
@@ -82,6 +81,7 @@
   %    4545
     \]
   \end{exampleblock}
+  where,
   \begin{itemize}
  % \centering
     \item  $d_{i}$\quad total delay
@@ -97,14 +97,15 @@
       \hat{x_{i}} = \sum_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{ij}x_{i} + \sum_{k\neq i}^{N}\sum_{j\in{A}}^{}h_{ij}^{H}w_{kj}x_{k} + \delta_{i}
     \]
   \end{exampleblock}
+  where,
   \begin{itemize}
-    \item $\mathcal{A}$\qquad set of active RRHs
-    \item $x_{i}$\qquad data symbol for $i$th user
-    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
-    \item $h_{ij}^{H}\in\mathbb{C}^{k}$\quad channel from RRH $j$ to UE $i$
-    \item $\delta_{i}\sim\mathcal{C}\mathcal{N}(0,\sigma_{i})$\quad additive white Gaussian noise(AWGN) at UE $i$
-    \item $i\in\mathcal{N}$
-    \item $j\in\mathcal{A}$
+    \item {\makebox[2.5cm]{$\mathcal{A}$\hfill} set of active RRHs}
+    \item {\makebox[2.5cm]{$x_{i}$\hfill} data symbol for $i$th user}
+    \item {\makebox[2.5cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
+    \item {\makebox[2.5cm]{$h_{ij}^{H}\in\mathbb{C}^{k}$\hfill} channel from RRH $j$ to UE $i$}
+    \item {\makebox[2.5cm]{$\delta_{i}\sim\mathcal{C}\mathcal{N}(0,\sigma_{i})$\hfill} additive white Gaussian noise(AWGN) at UE $i$}
+    \item {\makebox[2.5cm]{$i\in\mathcal{N}$\hfill}}
+    \item {\makebox[2.5cm]{$j\in\mathcal{A}$\hfill}}
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -115,14 +116,15 @@
       \text{SINR}_{i}(\mathcal{A}) = \frac{\bigg\lvert\sum\limits_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{ij}\bigg\rvert^2}{\sigma_{i}^2 + \sum\limits_{k\neq i}^{N}\bigg\lvert\sum\limits_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{kj}\bigg\rvert}
     \]
   \end{exampleblock}
+  where,
   \begin{itemize}
-    \item $\sigma_{i}$
-    \item $\mathcal{A}$\qquad set of active RRHs
-    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
-    \item $h_{ij}^{H}\in\mathbb{C}^{k}$\quad channel from RRH $j$ to UE $i$
-    \item $i\in\mathcal{N}$
-    \item $j\in\mathcal{A}$
-  \end{itemize}
+    \item {\makebox[2cm]{$\sigma_{i}$\hfill} noise}
+    \item {\makebox[2cm]{$\mathcal{A}$\hfill} set of active RRHs}
+    \item {\makebox[2cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
+    \item {\makebox[2cm]{$h_{ij}^{H}\in\mathbb{C}^{k}$\hfill} channel from RRH $j$ to UE $i$}
+    \item {\makebox[2cm]{$i\in\mathcal{N}$\hfill}}
+    \item {\makebox[2cm]{$j\in\mathcal{A}$\hfill}}
+    \end{itemize}
 \end{frame}
 \begin{frame}
   \frametitle{System Model}
@@ -131,10 +133,11 @@
       c_{i} \leq B_{i}\log(1+\text{SINR}_{i}(\mathcal{A})) 
     \] 
   \end{exampleblock}
+  where,
   \begin{itemize}
-    \item $B_{i}$\qquad bandwidth for UE $i$\\
-    \item SINR\quad Signal-to-Interference-plus-Noise-Ratio\\
-    \item $\mathcal{A}$\qquad set of active RRHs
+    \item {\makebox[2cm]{$B_{i}$\hfill} bandwidth for UE $i$}
+    \item {\makebox[2cm]{SINR\hfill} Signal-to-Interference-plus-Noise-Ratio}
+    \item {\makebox[2cm]{$\mathcal{A}$\hfill} set of active RRHs}
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -144,6 +147,7 @@
       \sum_{i = 1}^{N}w_{ij}^{H}w_{ij}  = \sum_{i = 1}^{N} \lVert w_{ij}\rVert^2 \leq E_{j}
     \]
   \end{exampleblock}
+  where,
   \begin{itemize}
     \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
     \item $i\in\mathcal{N}$
@@ -167,12 +171,11 @@
     \]
     \[
       \lambda_{i} < \mu_{i},\lambda_{i}<c_{i}
-  %    4545
-  \]
-  \[
-    c_i{i} \leq B_{i}\log(1+\text{SINR}_{i}(\mathcal{A}))
-  \]
-  \[
+    \]
+    \[
+      c_i{i} \leq B_{i}\log(1+\text{SINR}_{i}(\mathcal{A}))
+    \]
+    \[
     \sum_{i=1}^{N}w_{ij}^{H}w_{ij}\leq E_{i},\quad \forall i\in \mathcal{N}, \quad \forall j\in \mathcal{L}
   \]
   \end{exampleblock}
@@ -181,9 +184,9 @@
   \footnotesize\raggedright
   \begin{itemize}
     \item $\varphi_{i}(\mu_{i})$\quad VM $i$'s power consumption
-    \item $\mu_{i}$\qquad VM $i$'s computation capacity/service rate/processing rate
-    \item $P_{f}$\qquad power consumption active fibre links
-    \item $\eta\in(0,1)$\quad ineffficiency coefficient amplifier in RRH
+    \item $\mu_{i}$\qquad VM $i$'s service rate
+    \item $P_{f}$\qquad power consumption of active fibre links
+    \item $\eta\in(0,1)$\quad ineffficiency coefficient of amplifier in RRH
     \item $\mathcal{A}$\qquad set of active RRHs
     \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
     \item $i\in\mathcal{N}$
@@ -216,12 +219,12 @@
     \]
   \end{exampleblock}
   \begin{itemize}
-    \item $\varepsilon_{i}$\quad an arbitrary nonnegative weight
-    \item $c_{i}$\quad transmission rate
-    \item $B_{i}$\qquad bandwidth for UE $i$
-    \item $\mathcal{A}$\qquad set of active RRHs
-    \item $E_{j}$\quad maximum power on a link
-    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
+    \item {\makebox[2cm]{$\varepsilon_{i}$\hfill} arbitrary nonnegative weight}
+    \item {\makebox[2cm]{$c_{i}$\hfill} transmission rate}
+    \item {\makebox[2cm]{$B_{i}$\hfill} bandwidth for UE $i$}
+    \item {\makebox[2cm]{$\mathcal{A}$\hfill} set of active RRHs}
+    \item {\makebox[2cm]{$E_{j}$\hfill} maximum power on a link}
+    \item {\makebox[2cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
     %\item SINR\qquad Signal-to-Interference-plus-Noise-Ratio
   \end{itemize}
 \end{frame}
@@ -240,14 +243,14 @@
   \end{exampleblock}
   Where the objective function $f(\mathbf{c})$, for $0\leq\mathbf{c}\leq\bar{\mathbf{c}}$ has the following properties:
   \begin{itemize}
-    \item $f(\mathbf{c})$ is a function only of $\mathbf{c}$, and
-    \item $f(\mathbf{c})<\infty$ is continuously differentiable, and
-    \item $f(\mathbf{c})$ is convex in the feasible region
-    \item $\mathbf{c} = \begin{bmatrix}c_{1},\dots,c_{N}\end{bmatrix}^T$
-    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
-    \item $c_{i}$\qquad transmission rate
-    \item $E_{j}$\qquad maximum power on a link
-    \item $\mathcal{A}$\qquad set of active RRHs
+    \item {\makebox[2.8cm]{$f(\mathbf{c})$\hfill} is a function only of $\mathbf{c}$, and}
+    \item {\makebox[2.8cm]{$f(\mathbf{c})<\infty$\hfill} is continuously differentiable, and}
+    \item {\makebox[2.8cm]{$f(\mathbf{c})$\hfill} is convex in the feasible region}
+    \item {\makebox[2.8cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
+    \item {\makebox[2.8cm]{$c_{i}$\hfill} transmission rate}
+    \item {\makebox[2.8cm]{$E_{j}$\hfill} maximum power on a link}
+    \item {\makebox[2.8cm]{$\mathcal{A}$\hfill} set of active RRHs}
+    \item {\makebox[2.8cm]{$\mathbf{c} = \begin{bmatrix}c_{1},\dots,c_{N}\end{bmatrix}^T$}}
   \end{itemize}
 \end{frame}
 
@@ -260,17 +263,21 @@
      \gamma_{lb}(\mathcal{Q}) = \Bigg\{\begin{array}{ll}f(\mathbf{c}_{max}),\quad &\mathbf{c}_{max}\in\mathcal{F}\\+\infty,\quad &otherwise\\\end{array}	
      \]
   \end{exampleblock}
+  where,
   \begin{itemize}
     \item $\mathbf{c}_{min} = \begin{bmatrix}c_{1,min},\dots,c_{N,min}\end{bmatrix}^T$
     \item $\mathbf{c}_{max} = \begin{bmatrix}c_{1,max},\dots,c_{N,max}\end{bmatrix}^T$
+    \item $\gamma_{ub}(\mathcal{Q})$\quad upper bound
+    \item $\gamma_{lb}(\mathcal{Q})$\quad lower bound
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
+  \frametitle{BnB algorithm for QWSRM problem}
 %\begin{frame}[fragile]{\phantom{Tp}}
- % \vspace*{-2\baselineskip}
+  \vspace*{-1\baselineskip}
   \footnotesize
-    \begin{block}{BnB algorithm for QWSRM problem}
+  \begin{block}{}
         \begin{algorithmic}
 
 	  \Input $\mathcal{Q}_{\text{init}}, \mathcal{A}, \text{and} \mathcal{f} \text{(c)}.$
