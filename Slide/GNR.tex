@@ -44,7 +44,7 @@
   \author{alhelal \& Jobayed Ullah}
 \institute{CSEDU}
 \begin{frame}
-  \frametitle{Assumption}
+  \frametitle{Assumption of the Paper}
   \begin{exampleblock}{Assumption}
     \[
       \mu_{i},c_{i} > \lambda_{i}
@@ -57,15 +57,15 @@
     \]
   \end{exampleblock}
   \begin{itemize}
-    \item $\mu_{i}$\quad service rate
-    \item $c_{i}$\quad transmission rate
-    \item $\lambda_{i}$\quad arrival rate
-    \item $\varphi_{i}{(\mu_{i})} = k_{i}\mu_{i}^{a_{i}}$
+    \item {\makebox[2.2cm]{$\mu_{i}$\hfill} service rate}
+    \item {\makebox[2.2cm]{$c_{i}$\hfill} transmission rate}
+    \item {\makebox[2.2cm]{$\lambda_{i}$\hfill} arrival rate}
+    \item {\makebox[2.2cm]{$\varphi_{i}{(\mu_{i})} = k_{i}\mu_{i}^{a_{i}}$\hfill} power consumption for $\mu_{i}$}
     \item $k_{i} > 0$ and $a_{i} > 1$ are positive constants.
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Aim}
+  \frametitle{Aim of the Paper}
   Minimizing system power consumtion in C-RAN, which consists of three components:
   \begin{itemize}
   \item Power consumption in BBU pool
@@ -78,7 +78,9 @@
   \begin{exampleblock}{Delay}
     \[
       d_{i} = \frac{1}{\mu_{i}- \lambda_{i}} + \frac{1}{c_{i} - \lambda_{i}}
-  %    4545
+    \]
+    \[
+      d_{i}\leq\tau_{i}
     \]
   \end{exampleblock}
   where,
@@ -86,26 +88,26 @@
  % \centering
     \item  $d_{i}$\quad total delay
     \item $\mu_{i}$\quad service rate
-    \item $\lambda_{i}$\quad arival rate
+    \item $\lambda_{i}$\quad arrival rate
     \item $c_{i}$\quad transmission rate
+    \item $\tau_{i}$\quad is a predefined QoS requirement of UE $i$
   \end{itemize}
 \end{frame}
 \begin{frame}
   \frametitle{System Model}
   \begin{exampleblock}{Recieved signal at UE $i$}
     \[
-      \hat{x_{i}} = \sum_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{ij}x_{i} + \sum_{k\neq i}^{N}\sum_{j\in{A}}^{}h_{ij}^{H}w_{kj}x_{k} + \delta_{i}
+      \hat{x_{i}} = \sum_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{ij}x_{i} + \sum_{k\neq i}^{N}\sum_{j\in{A}}^{}h_{ij}^{H}w_{kj}x_{k} + \delta_{i},\quad i\in\mathcal{N}, j\in\mathcal{A}
     \]
   \end{exampleblock}
   where,
   \begin{itemize}
-    \item {\makebox[2.5cm]{$\mathcal{A}$\hfill} set of active RRHs}
-    \item {\makebox[2.5cm]{$x_{i}$\hfill} data symbol for $i$th user}
-    \item {\makebox[2.5cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
     \item {\makebox[2.5cm]{$h_{ij}^{H}\in\mathbb{C}^{k}$\hfill} channel from RRH $j$ to UE $i$}
+    \item {\makebox[2.5cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
+    \item {\makebox[2.5cm]{$x_{i}$\hfill} data symbol for $i$th user}
     \item {\makebox[2.5cm]{$\delta_{i}\sim\mathcal{C}\mathcal{N}(0,\sigma_{i})$\hfill} additive white Gaussian noise(AWGN) at UE $i$}
-    \item {\makebox[2.5cm]{$i\in\mathcal{N}$\hfill}}
-    \item {\makebox[2.5cm]{$j\in\mathcal{A}$\hfill}}
+    \item {\makebox[2.5cm]{$\mathcal{N}$\hfill} set of all UEs}
+    \item {\makebox[2.5cm]{$\mathcal{A}$\hfill} set of active RRHs}
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -113,17 +115,16 @@
   \begin{exampleblock}{Signal-to-Interference-plus-Noise-Ratio(SINR) at UE $i$}
     \[
 %     \text{SINR}_{i}(A) = \frac{\lvert\sum_{j\in{A}}^{}h_{ij}^{H}w_{ij}\rvert^2}{\sigma_{i}^2 + \sum{k\neq i}^{N}
-      \text{SINR}_{i}(\mathcal{A}) = \frac{\bigg\lvert\sum\limits_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{ij}\bigg\rvert^2}{\sigma_{i}^2 + \sum\limits_{k\neq i}^{N}\bigg\lvert\sum\limits_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{kj}\bigg\rvert}
+      \text{SINR}_{i}(\mathcal{A}) = \frac{\bigg\lvert\sum\limits_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{ij}\bigg\rvert^2}{\sigma_{i}^2 + \sum\limits_{k\neq i}^{N}\bigg\lvert\sum\limits_{j\in{\mathcal{A}}}^{}h_{ij}^{H}w_{kj}\bigg\rvert},\quad i\in\mathcal{N},j\in\mathcal{A}
     \]
   \end{exampleblock}
   where,
   \begin{itemize}
-    \item {\makebox[2cm]{$\sigma_{i}$\hfill} noise}
-    \item {\makebox[2cm]{$\mathcal{A}$\hfill} set of active RRHs}
-    \item {\makebox[2cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
     \item {\makebox[2cm]{$h_{ij}^{H}\in\mathbb{C}^{k}$\hfill} channel from RRH $j$ to UE $i$}
-    \item {\makebox[2cm]{$i\in\mathcal{N}$\hfill}}
-    \item {\makebox[2cm]{$j\in\mathcal{A}$\hfill}}
+    \item {\makebox[2cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
+    \item {\makebox[2cm]{$\sigma_{i}$\hfill} noise(variance)}
+    \item {\makebox[2cm]{$\mathcal{N}$\hfill} set of all UEs}
+    \item {\makebox[2cm]{$\mathcal{A}$\hfill} set of active RRHs}
     \end{itemize}
 \end{frame}
 \begin{frame}
@@ -135,6 +136,7 @@
   \end{exampleblock}
   where,
   \begin{itemize}
+    \item {\makebox[2cm]{$c_{i}$\hfill} transmission rate}
     \item {\makebox[2cm]{$B_{i}$\hfill} bandwidth for UE $i$}
     \item {\makebox[2cm]{SINR\hfill} Signal-to-Interference-plus-Noise-Ratio}
     \item {\makebox[2cm]{$\mathcal{A}$\hfill} set of active RRHs}
@@ -144,18 +146,17 @@
   \frametitle{Transmitting Power}
   \begin{exampleblock}{Each RRH $j$ has maximum transmitting power constraint}
     \[
-      \sum_{i = 1}^{N}w_{ij}^{H}w_{ij}  = \sum_{i = 1}^{N} \lVert w_{ij}\rVert^2 \leq E_{j}
+      \sum_{i = 1}^{N}w_{ij}^{H}w_{ij}  = \sum_{i = 1}^{N} \lVert w_{ij}\rVert^2 \leq E_{j},\quad i\in\mathcal{N},j\in\mathcal{L}
     \]
   \end{exampleblock}
   where,
   \begin{itemize}
-    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
-    \item $i\in\mathcal{N}$
-    \item $j\in\mathcal{L}$
+    \item {\makebox[2cm]{$w_{ij}\in\mathbb{C}^{k}$\hfill} transmit beamformer for UE $i$ from RRH $j$}
+    \item {\makebox[2cm]{$E_{j}$\hfill} maximum power on a link}
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Problem Formulation}
+  \frametitle{Problem Formulation(Minimizing Sys Power Consumption)}
   \vspace*{-2.5\baselineskip}
   \begin{columns}[t]
     \begin{column}{0.62\linewidth}
@@ -170,10 +171,11 @@
       \frac{1}{\mu_{i}- \lambda_{i}} + \frac{1}{c_{i} - \lambda_{i}}\leq\tau_{i}
     \]
     \[
-      \lambda_{i} < \mu_{i},\lambda_{i}<c_{i}
+      \mu_{i},c_{i} > \lambda_{i}
+      %\lambda_{i} < \mu_{i},\lambda_{i}<c_{i}
     \]
     \[
-      c_i{i} \leq B_{i}\log(1+\text{SINR}_{i}(\mathcal{A}))
+      c_{i} \leq B_{i}\log(1+\text{SINR}_{i}(\mathcal{A}))
     \]
     \[
     \sum_{i=1}^{N}w_{ij}^{H}w_{ij}\leq E_{i},\quad \forall i\in \mathcal{N}, \quad \forall j\in \mathcal{L}
@@ -184,13 +186,15 @@
   \footnotesize\raggedright
   \begin{itemize}
     \item $\varphi_{i}(\mu_{i})$\quad VM $i$'s power consumption
-    \item $\mu_{i}$\qquad VM $i$'s service rate
-    \item $P_{f}$\qquad power consumption of active fibre links
+    \item $P_{f}$\quad power consumption of active fibre links
     \item $\eta\in(0,1)$\quad ineffficiency coefficient of amplifier in RRH
-    \item $\mathcal{A}$\qquad set of active RRHs
-    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer for UE $i$ from RRH $j$
-    \item $i\in\mathcal{N}$
-    \item $j\in\mathcal{A}$
+    \item $w_{ij}\in\mathbb{C}^{k}$\quad transmit beamformer% for UE $i$ from RRH $j$
+    \item $\tau_{i}$\quad is a predefined QoS requirement% of UE $i$
+    \item $\mathcal{A}$\quad set of active RRHs
+    \item $B_{i}$\quad bandwidth for UE $i$
+    \item $\mu_{i}$\quad VM $i$'s service rate
+    \item $c_{i}$\quad transmission rate
+    \item $\lambda_{i}$\quad arrival rate
   \end{itemize}
 \end{column}
 \end{columns}
@@ -254,7 +258,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\phantom{Tp}}
+\begin{frame}{Limits of BnB Algorithm}
   \begin{exampleblock}{\phantom{Tp}}
    \[
      \gamma_{ub}(\mathcal{Q}) = \Bigg\{\begin{array}{ll}f(\mathbf{c}_{min}),\quad &\mathbf{c}_{min}\in\mathcal{F}\\+\infty,\quad &otherwise\\\end{array}	
