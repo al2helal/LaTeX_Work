@@ -12,7 +12,8 @@
 \vspace{1.5cm}
 {\huge\bfseries Title: Resource Allocation in Cloud Radio Access Network\par}
 \vspace{2cm}
-supervisor -\par
+supervisor -\\
+\vspace{.5cm}
 Tamal Adhikary\\
 Lecturer\\
 Computer Science and Engineering\\
@@ -48,11 +49,21 @@ Signature\ldots\ldots\ldots\ldots\\
 %\maketitle
 \section{Introduction}
 \subsection{Problem Definition}
-
+C-RAN uses centralized calculation. Resource allocation to the end user/RRHs are handled from the central server that is BBU ( Baseband Unit) pool. We want to find out such a way so that the resource allocation will be optimized and power consumption will be reduced and QoS will be increased.
 \subsection{Motivation}
+CLOUD radio access network (C-RAN) has emerged as a promising solution to the operation and bandwidth challenges faced by future mobile communication infrastructures, which are required to handle an exponentially increasing demand for data traffic . A C-RAN utilizes centralized signal processing in the baseband unit (BBU) pool instead of processing at distributed base stations (BSs), which can result in significant capital and operating expenditure savings. Centralized processing at the BBU pool also allows cooperation between multiple remote radio heads (RRHs), thus improving spectrum efficiency and link reliability. Furthermore, the use of cloud computing technologies as the infrastructure of the BBU pool greatly improves hardware utilization.
 \subsection{Objective}
 \section{Related Work}
 \subsection{Problem those paper address}
 \subsection{Methods and positive aspects of those papers}
+In that paper, they formulate the cross-layer resource allocation problem as a MINLP by minimizing the system power consumption, which consists of three parts: the power consumption in the BBU pool with respect to (w.r.t.) the VM computation capacity, the power consumption in the fiber fronthaul links w.r.t. the number of links (or, active RRHs) and the transmission power on the RRHs w.r.t. the transmit beamformer. They relax the MINLP into an extended sum-utility maximization (ESUM) problem, and propose two different approximate solution approaches. In the first approach, they approximate the ESUM problem as a quasi weighted sum-rate maximization (QWSRM) problem, and propose a BnB algorithm to solve it. The QWSRM problem is an extension of the weighted sum- rate maximization (WSRM) problem. In the second approach, they utilize the weighted minimum mean square error (WMMSE) method to obtain a locally optimal solution to the ESUM problem. Based on the achievable rates found by either solving the QWSRM problem or using the WMMSE approach, they propose an efficient Shaping-and-Pruning algorithm to perform RRH selection. Their proposed algorithm achieves a trade-off between computational complexity and solution optimality. They provide simulation results that suggest that their proposed approach outperforms the recently proposed greedy selection algorithm and successive selection algorithm in terms of overall system power consumption, since these methods only optimize the RRH selection and RRH beamforming strategies. That shows that cross-layer optimization can result in higher energy efficiencies for a C-RAN.
 \subsection{Challenges remain on those papers}
+\begin{itemize}
+  \item \textbf{BBU}\\
+    BBU pool dynamically adjust VM capacity to optimize power consumption for changing traffic and channel state. Research challenge is to design a low-complexity algorithms for dynamic service scaling.
+  \item \textbf{Fiber Links}\\
+    By turning off some redundant fiber links, as well as the RRH, energy savings can be achieved. This motivates the link or RRH selection problem.
+  \item \textbf{RRHs}\\
+    RRHs(Remote Radio Head) cooperate with each other to perform centralized joint beamforming to mitigate interference. Thus, the throughput of the wireless channels to the user can be significantly enhanced. Research issue here is designing joint beamforming to achieve an optimal trade-off in channel throughput and EE (Energy Efficiency).
+\end{itemize}
 \end{document}
