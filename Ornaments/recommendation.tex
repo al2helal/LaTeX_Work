@@ -1,0 +1,122 @@
+\documentclass{scrartcl}
+\usepackage[banglamainfont=Akaash,banglattfont=Akaash]{latexbangla}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage[dvipsnames]{xcolor}
+\usepackage[object=vectorian]{pgfornament} % also loads tikz
+
+\tikzset{pgfornamentstyle/.style={draw = Periwinkle,
+                                  fill = SpringGreen}}   
+
+\usetikzlibrary{
+  positioning, % for left=of, above=of etc.
+  calc % for let syntax used in second example
+}
+
+\begin{document}  
+
+\begin{center}   
+%\begin{tikzpicture}[
+%  every node/.append style={inner sep=0},
+%  node distance=5mm
+%]
+%   \node [Maroon] (text) {
+%   \begin{tabular}{ll}
+%     শিশুকে \\
+%     ভুল শেখাবেন না&সঠিক শেখাবেন।\\
+%     লোভ দেখাবেন না &পুরস্কার দেবেন \\
+%     নিরুৎসাহিত করবেন না&উৎসাহিত করবেন\\
+%     বকুনি দেবেন না&উপেদশ দেবেন \\
+%     বেয়াদব বলবেন না&আদব শেখাবেন \\
+%     নিঃসঙ্গ  রাখবেন না&সৎসঙ্গ দেবেন \\
+%     ভয় দেখাবেন না&সাহস দেবেন \\
+%     লজ্জা দেবেন না& শিখিয়ে দেবেন \\
+%     ধমক দেবেন না&বুঝতে দেবেন \\
+%     মিথ্যা বলবেন না&সত্য বলবেন \\
+%     বেত্রাঘাত করবেন না &স্নেহ করবেন \\
+%     নিন্দা করেবন না&ভালবাসবেন \\
+%     অবেহলা করবেন না&গুরুত্ব দেবেন \\
+%     মাওলানা মুরশিদুল আলম & মুহতামিম\\ 
+%     জামিয়া আরাবিয়া হাজী ইউনুছ (কওমী মাদ্রাসা)
+%    \end{tabular}
+%    };
+%
+%  \node [anchor=north] (below) at (text.south) {\pgfornament[width=5cm,symmetry=c]{69}};
+%  \node [anchor=south] (above) at (text.north) {\pgfornament[width=5cm]{69}};
+%
+%   \node [rotate=-90, left=of text, anchor=north] (left)  {\pgfornament[width=6cm]{46}};
+%   \node [rotate=90, right=of text, anchor=north] (right) {\pgfornament[width=6cm]{46}};
+%
+%   \node [above=of above] (top)    {\pgfornament[width=6cm]{71}};
+%   \node [below=of below] (bottom) {\pgfornament[width=6cm,symmetry=h]{71}};
+%
+%   \node [anchor=north west] at (top.north -| left.south)  {\pgfornament[width=2cm]{63}};
+%   \node [anchor=north east] at (top.north -| right.south) {\pgfornament[width=2cm,symmetry=v]{63}};
+%   \node [anchor=south west] at (bottom.south -| left.south) {\pgfornament[width=2cm,symmetry=h]{63}};
+%   \node [anchor=south east] at (bottom.south -| right.south) {\pgfornament[width=2cm,symmetry=c]{63}};
+%
+%   % draw frame
+%  \draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
+%
+%\end{tikzpicture} 
+%
+
+\begin{tikzpicture}[
+  every node/.append style={inner sep=0},
+  node distance=5mm
+]
+   \node [Maroon] (text) {
+   \begin{tabular}{ll}
+     শিশুকে \\
+     ভুল শেখাবেন না&সঠিক শেখাবেন।\\
+     লোভ দেখাবেন না &পুরস্কার দেবেন \\
+     নিরুৎসাহিত করবেন না&উৎসাহিত করবেন \\
+     বকুনি দেবেন না&উপেদশ দেবেন \\
+     বেয়াদব বলবেন না&আদব শেখাবেন \\
+     নিঃসঙ্গ  রাখবেন না&সৎসঙ্গ দেবেন \\
+     ভয় দেখাবেন না&সাহস দেবেন \\
+     লজ্জা দেবেন না& শিখিয়ে দেবেন \\
+     ধমক দেবেন না&বুঝতে দেবেন \\
+     মিথ্যা বলবেন না&সত্য বলবেন \\
+     বেত্রাঘাত করবেন না &স্নেহ করবেন \\
+     নিন্দা করবেন না&ভালবাসবেন \\
+     অবেহলা করবেন না&গুরুত্ব দেবেন \\
+     মাওলানা মুরশিদুল আলম & মুহতামিম\\ 
+     জামিয়া আরাবিয়া হাজী ইউনুছ (কওমী মাদ্রাসা)
+    \end{tabular}
+    };
+
+
+
+  \path 
+    let
+    \p1=(text.south west),
+    \p2=(text.north east),
+    \n1={\x2-\x1}, % width of text node
+    \n2={\y2-\y1}  % height of text node
+    in
+% in all of the below some fraction of \n1 or \n2 is used to define the width of the ornaments
+% set width of these ornaments to half the text node's width
+   node [anchor=north] (below) at (text.south) {\pgfornament[width=0.5*\n1,symmetry=c]{69}}
+   node [anchor=south] (above) at (text.north) {\pgfornament[width=0.5*\n1]{69}}
+% use \n2 for ornament width here
+   node [rotate=-90, left=of text, anchor=north] (left)  {\pgfornament[width=\n2]{46}}
+   node [rotate=90, right=of text, anchor=north] (right) {\pgfornament[width=\n2]{46}}
+% and \n1 here
+   node [above=of above] (top)    {\pgfornament[width=\n1]{71}}
+   node [below=of below] (bottom) {\pgfornament[width=\n1,symmetry=h]{71}}
+%   node [anchor=north] (top) at (text.north)   {\pgfornament[width=\n1]{71}}
+%   node [anchor=south] (bottom) at (text.south) {\pgfornament[width=\n1,symmetry=h]{71}}
+% and 25% of width for the corner ornaments
+   node [anchor=north west] at (top.north -| left.south)  {\pgfornament[width=0.25*\n1]{63}}
+   node [anchor=north east] at (top.north -| right.south) {\pgfornament[width=0.25*\n1,symmetry=v]{63}}
+   node [anchor=south west] at (bottom.south -| left.south) {\pgfornament[width=0.25*\n1,symmetry=h]{63}}
+   node [anchor=south east] at (bottom.south -| right.south) {\pgfornament[width=0.25*\n1,symmetry=c]{63}}; % <- note the \path doesn't end until here
+
+   % draw frame
+  \draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
+
+\end{tikzpicture} 
+\end{center}
+\end{document} 
