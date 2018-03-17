@@ -1,0 +1,21 @@
+\documentclass{scrartcl}
+\usepackage{expl3,graphicx,url}
+\newcommand\addpage[1]{%
+  \parbox{\dimexpr.5\linewidth}{%
+      \centering%
+      \fbox{\includegraphics[width=0.9\linewidth]{#1}}\\%
+      \path{#1}%
+  }%
+  \penalty0\relax
+}
+\lineskip=0pt plus 1fil
+\begin{document}
+\noindent
+\ExplSyntaxOn
+\int_step_inline:nnnn{1}{1}{100}{
+  \file_if_exist:nT{titlepage_#1.pdf}{
+    \addpage{titlepage_#1.pdf}
+  }
+}
+\ExplSyntaxOff
+\end{document}
