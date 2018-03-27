@@ -1,0 +1,55 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usetikzlibrary{positioning,shapes.multipart,shapes}
+\begin{document}
+\tikzset{basic/.style={
+        draw,
+        rectangle split,
+        rectangle split parts=2,
+        rectangle split part fill={blue!20,white},
+        minimum width=2.5cm,
+        text width=2cm,
+        align=left,
+        font=\itshape
+    },
+    Diamond/.style={ diamond, 
+                        draw, 
+                        shape aspect=2, 
+                        inner sep = 2pt,
+                        text centered,
+                        fill=blue!10!white,
+                        font=\itshape
+                      }}
+\begin{tikzpicture}
+\node[basic] (item) {item
+\nodepart{second}
+\underline{code}\\
+name\\
+type\\
+size\\
+color\\
+price\\
+image\_url\\
+instock};
+\node[basic,right=5cm of item] (transaction) {transaction
+\nodepart{second}
+\underline{code}\\
+\underline{userid}\\
+\underline{date\_time}\\
+count};
+\node[basic,right=2cm of transaction] (user) {user
+  \nodepart{second}
+  \underline{userid}\\
+  name\\
+  password\\
+  age\\
+  gender\\
+  address\\
+  occupation\\
+  mobile\\
+email};
+
+%\draw (item) -- (transaction) node[midway,Diamond]{purchase};
+\draw (item) -> (transaction);
+\draw (transaction) -> (user);
+\end{tikzpicture}
+\end{document}
