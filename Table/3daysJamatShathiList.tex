@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{multido}
+\usepackage{booktabs}
+\usepackage[a4paper,left=1cm,top=1cm,bottom=0cm,right=0cm]{geometry}
+\usepackage{polyglossia}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+%\newfontfamily\englishfont[Scale=MatchLowercase]{Linux Biolinum O}
+\newfontfamily\bengalifont[Script=Bengali]{Akaash}
+
+\usepackage{pgffor}
+\newcommand{\ListItem}[1]{\underline{\makebox[8cm][l]{#1}}}
+\newcommand{\minicontent}{\foreach \x in {১|,২|,৩|,৪|,৫|,৬|,৭|,৮|,৯|,১০|,১১|,১২|,১৩|,১৪|,১৫|,১৬|,১৭|,১৮|,১৯|,২০|}{\ListItem{\x}\par\bigskip}}
+\begin{document}
+\noindent
+\multido{}{2}{\begin{minipage}{0.5\textwidth}কাকরাইল তাবলীগ মারকাজ মসজিদ\\ ৩ দিনের জামাত \\হালকা নং-\\ ফজলুল হক মুসলিম হল মসজিদ\\ ঢাকা বিশ্ববিদ্যালয় এলাকা\\ জমাত যাওয়ার তারিখ - \\ পর্চা নং - \\ রোখ -\\\\সাথীদের নামের তালিকা - \\\\  \minicontent\vspace{2cm}\end{minipage}\hspace{1cm}
+}
+\end{document}

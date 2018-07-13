@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{multido}
 \usepackage{booktabs}
-\usepackage[a4paper,left=0.1cm,top=0.2cm,bottom=0cm,right=0cm]{geometry}
+\usepackage[a4paper,left=0.5cm,top=0.4cm,bottom=0cm,right=0cm]{geometry}
 \usepackage{polyglossia}
 \setmainlanguage[numerals=Devanagari]{bengali}
 \setmainlanguage{bengali}
@@ -11,7 +11,7 @@
 
 \usepackage{pgffor}
 \newcommand{\ListItem}[1]{\underline{\makebox[5cm][l]{#1}}}
-\newcommand{\minicontent}{\foreach \x in {চাল,ডাল,তেল,লবণ,আলু,পেঁয়াজ,মরিচ,আদা,রসুন,হলুদ,মশলা,মাছ/গোস্ত/ডিম,শসা/গাজর/লেবু,সবজি,রিক্সা ভাড়া \hfill 40/- টাকা}{\ListItem{\x}\par\bigskip}}
+\newcommand{\minicontent}{\foreach \x in {চাল - দুঃ \hfill রাঃ\hfill সঃ\hspace{1.3cm},ডাল,তেল,লবণ,আলু,পেঁয়াজ,মরিচ,আদা,রসুন,হলুদ,মশলা,সবজি,মাছ/গোস্ত/ডিম,শসা/গাজর/লেবু,গ্যাসের বিল}{\ListItem{\x}\par\bigskip}}
 \begin{document}
 \noindent
 \multido{}{6}{\begin{minipage}{0.33\textwidth}\minicontent\vspace{2cm}\end{minipage}
