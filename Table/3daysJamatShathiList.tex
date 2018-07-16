@@ -11,9 +11,9 @@
 
 \usepackage{pgffor}
 \newcommand{\ListItem}[1]{\underline{\makebox[8cm][l]{#1}}}
-\newcommand{\minicontent}{\foreach \x in {১|,২|,৩|,৪|,৫|,৬|,৭|,৮|,৯|,১০|,১১|,১২|,১৩|,১৪|,১৫|,১৬|,১৭|,১৮|,১৯|,২০|}{\ListItem{\x}\par\bigskip}}
+\newcommand{\minicontent}{\foreach \x in {১|,২|,৩|,৪|,৫|,৬|,৭|,৮|,৯|,১০|,১১|,১২|,১৩|,১৪|,১৫|,১৬|,১৭|,১৮|,১৯|,২০|}{\ListItem{\x}\par\bigskip\vspace{0.2cm}}}
 \begin{document}
 \noindent
-\multido{}{2}{\begin{minipage}{0.5\textwidth}\begin{large}কাকরাইল তাবলীগ মারকাজ মসজিদ\\ ৩ দিনের জামাত \\হালকা নং-\\ ফজলুল হক মুসলিম হল মসজিদ\\ ঢাকা বিশ্ববিদ্যালয় এলাকা\\ জমাত যাওয়ার তারিখ - \\ পর্চা নং - \\ রোখ -\\\\সাথীদের নামের তালিকা - \\\\ \end{large} \minicontent\vspace{2cm}\end{minipage}\hspace{1cm}
+\multido{}{2}{\begin{minipage}{0.5\textwidth}\begin{Large}কাকরাইল তাবলীগ মারকাজ মসজিদ\\ ৩ দিনের জামাত \\হালকা নং-\\ ফজলুল হক মুসলিম হল মসজিদ\\ ঢাকা বিশ্ববিদ্যালয় এলাকা\\ জমাত যাওয়ার তারিখ - \\ পর্চা নং - \\ রোখ -\\\\সাথীদের নামের তালিকা - \\\\ \end{Large} \minicontent\vspace{2cm}\end{minipage}\hspace{1cm}
 }
 \end{document}
