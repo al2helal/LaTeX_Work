@@ -1,0 +1,20 @@
+\documentclass[landscape]{article}
+\usepackage{multido}
+\usepackage{booktabs}
+\usepackage{graphics}
+\usepackage[a4paper,left=0.5cm,top=0.4cm,bottom=0cm,right=0cm]{geometry}
+\usepackage{polyglossia}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+%\newfontfamily\englishfont[Scale=MatchLowercase]{Linux Biolinum O}
+\newfontfamily\bengalifont[Script=Bengali]{Akaash}
+
+\usepackage{pgffor}
+\newcommand{\ListItem}[1]{\underline{\makebox[8cm][l]{#1}}}
+\newcommand{\minicontent}{\foreach \x in {প্লেট,সসপেন(ঢাকনাসহ) \hfill সেট,বাটি/বোল,ভাত বাড়ার ছোট প্লেট,বন প্লেট,গ্লাস,হামান দিস্তা,চাকু,আলু ছেলার কাটার,বালতি,জগ,মগ,দস্তরখানা,চামচ,বটি,ঘুটনি,লুস্নি,দড়ি(রং সহ),বাজারের ব্যাগ,চুলা,সিলিন্ডার}{\ListItem{\x}\par\bigskip}}
+\begin{document}
+\noindent
+\multido{}{3}{\begin{minipage}{0.33\textwidth}\minicontent\vspace{2cm}\end{minipage}
+}
+\end{document}
