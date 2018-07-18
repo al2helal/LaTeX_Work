@@ -1,8 +1,8 @@
-\documentclass[landscape]{article}
+\documentclass{article}
 \usepackage{multido}
 \usepackage{booktabs}
 \usepackage{graphics}
-\usepackage[a4paper,left=0.5cm,top=1cm,bottom=0cm,right=0cm]{geometry}
+\usepackage[a4paper,left=0.5cm,top=2cm,bottom=1cm,right=0cm]{geometry}
 \usepackage{polyglossia}
 \setmainlanguage[numerals=Devanagari]{bengali}
 \setmainlanguage{bengali}
@@ -11,10 +11,10 @@
 \newfontfamily\bengalifont[Script=Bengali]{Akaash}
 
 \usepackage{pgffor}
-\newcommand{\ListItem}[1]{\underline{\makebox[8cm][l]{#1}}}
-\newcommand{\minicontent}{\foreach \x in {প্লেট,সসপেন(ঢাকনাসহ) \hfill সেট,বাটি/বোল,ভাত বাড়ার ছোট প্লেট,বন প্লেট,লবণ দানী,গ্লাস,হামান দিস্তা,চাকু,আলু ছেলার কাটার,বালতি,জগ,মগ,দস্তরখানা,চামচ,বটি,ঘুটনি,লুস্নি,দড়ি(রং সহ),বাজারের ব্যাগ,চুলা,সিলিন্ডার}{\ListItem{\x}\par\bigskip}}
+\newcommand{\ListItem}[1]{\underline{\makebox[6cm][l]{#1}}\vspace{0.2cm}}
+\newcommand{\minicontent}{\foreach \x in {প্লেট,সসপেন(ঢাকনাসহ) \hfill সেট,বাটি/বোল,ভাত বাড়ার ছোট প্লেট,বন প্লেট,লবণ দানী,গ্লাস,হামান দিস্তা,চাকু,আলু ছেলার কাটার,মাজনী,ভিম,ক্লিপ,বালতি,জগ,মগ,দস্তরখানা,চামচ,বটি,ঘুটনি,লুস্নি,দড়ি(রং সহ),বাজারের ব্যাগ,চুলা,সিলিন্ডার}{\ListItem{\x}\par\bigskip}}
 \begin{document}
 \noindent
-\multido{}{3}{\begin{minipage}{0.33\textwidth}\minicontent\end{minipage}
+\multido{}{3}{\begin{minipage}{0.33333333333333333333333\textwidth}\minicontent\end{minipage}
 }
 \end{document}
