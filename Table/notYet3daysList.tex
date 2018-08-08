@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{forloop}
+\usepackage{polyglossia}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{Akaash}
+\usepackage[a4paper,left=0.1cm,right=0.1cm,top=0.1cm,bottom=0.1cm]{geometry}
+\newcommand{\aline}{\\\hline \arabic{theyflines} &&&&&&&\rule{0cm}{1cm}}
+\begin{document}
+\pagenumbering{gobble}
+\newcounter{theyflines}
+%\begin{center}
+%Extension - 1
+%\end{center}
+\noindent
+\begin{tabular}{|p{0.15cm}|p{5.2cm}|p{1.5cm}|p{1.3cm}|p{1cm}|p{1.4cm}|p{4cm}|p{2.9cm}|}
+\hline
+{\tiny \centering ক্রমিক} নং & \centering নাম & \centering রুম নং & \centering ডিপার্টমেন্ট & \centering বর্ষ & \centering সেশন & \centering মোবাইল নং & জেলা 
+\forloop{theyflines}{1}{\value{theyflines} < 26}{\aline}\\
+\hline
+\end{tabular}
+\end{document}
