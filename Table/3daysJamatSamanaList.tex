@@ -3,7 +3,7 @@
 \usepackage{booktabs}
 \usepackage{graphics}
 \usepackage{enumitem}
-\usepackage[a4paper,left=0.5cm,top=2cm,bottom=1cm,right=0cm]{geometry}
+\usepackage[a4paper,left=0.3cm,top=0.5cm,bottom=0.2cm,right=0.3cm]{geometry}
 \usepackage{polyglossia}
 \setmainlanguage[numerals=Devanagari]{bengali}
 \setmainlanguage{bengali}
@@ -13,18 +13,20 @@
 
 \usepackage{pgffor}
 \newcommand{\ListItem}[1]{\underline{\makebox[6cm][l]{#1}}}
-\newcommand{\minicontent}{\foreach \x in {প্লেট,সসপেন (ঢাকনাসহ) \hfill সেট,বাটি/বোল,ভাত বাড়ার ছোট প্লেট,বন প্লেট,লবণ দানী,গ্লাস,হামান দিস্তা,চাকু,আলু ছেলার কাটার,মাজনী,ভিম,ক্লিপ,বালতি,জগ,মগ,ডিম ভাজার প্যান,দস্তরখানা,চামচ,বটি,ঘুটনি,নুসনি,দড়ি (রং),বাজারের ব্যাগ,চুলা,সিলিন্ডার}{\ListItem{\x}\par\bigskip}}
+\newcommand{\minicontent}{\foreach \x in {প্লেট,সসপেন (ঢাকনাসহ) \hfill সেট,বাটি/বোল,ভাত বাড়ার ছোট প্লেট,বন প্লেট,লবণ দানী,গ্লাস,হামান দিস্তা,চাকু,আলু ছেলার কাটার,মাজনী,ভিম,ক্লিপ,বালতি,জগ,মগ,ডিম ভাজার প্যান,দস্তরখানা,চামচ,বটি,ঘুটনি,নুসনি,দড়ি (রং),বাজারের ব্যাগ,চুলা,সিলিন্ডার,কিতাব  \hfill সেট}{\ListItem{\x}\par\bigskip}}
 \begin{document}
 \noindent
 \multido{}{3}{\begin{minipage}{0.33333333333333333333333\textwidth}
 জিম্মাদারঃ \\
-সাথীসংখ্যাঃ\\[1cm]
+\newline
+সাথীসংখ্যাঃ\\
+\newline
 \minicontent
 \begin{itemize}[itemsep=0.0pt,leftmargin=*]
 \item সামানার হেফাজত ঈমানের হেফাজত
 \item সামানা গুছিয়ে রাখাও দাওয়াত
 \item ইস্তেমায়ী সামানার হেফাজতে ইস্তেমায়ীয়াত  রক্ষা হয়
-\item জামাত থেকে এসে তালিকা জমা দিয়ে দিলে ভাল হয়
+\item জামাত থেকে এসে তালিকা জমা দিলে ভাল হয়
 \end{itemize}
 \end{minipage}
 }
