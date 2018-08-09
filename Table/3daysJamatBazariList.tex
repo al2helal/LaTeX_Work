@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{multido}
 \usepackage{booktabs}
+\usepackage{enumitem}
 \usepackage[a4paper,left=0.5cm,top=0.4cm,bottom=0cm,right=0cm]{geometry}
 \usepackage{polyglossia}
 \setmainlanguage[numerals=Devanagari]{bengali}
@@ -14,6 +15,15 @@
 \newcommand{\minicontent}{\foreach \x in {চাল - দুঃ \hfill রাঃ\hfill সঃ\hspace{1.3cm},ডাল,তেল,লবণ,আলু,পেঁয়াজ,মরিচ,আদা,রসুন,হলুদ,মশলা,সবজি,মাছ/গোস্ত/ডিম,শসা/গাজর/লেবু,গ্যাসের বিল \hfill ১৫০/- টাকা}{\ListItem{\x}\par\bigskip}}
 \begin{document}
 \noindent
-\multido{}{6}{\begin{minipage}{0.33\textwidth}\minicontent\vspace{2cm}\end{minipage}
+\multido{}{6}
+{
+\begin{minipage}{0.33\textwidth}
+\minicontent
+\noindent
+\begin{itemize}[itemsep=0.0pt,leftmargin=*]
+\item বাজারের দোয়া পড়ে নিলে উত্তম হবে। 
+\end{itemize}
+\vspace{1cm}
+\end{minipage}
 }
 \end{document}
