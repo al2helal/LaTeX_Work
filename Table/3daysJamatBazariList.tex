@@ -11,7 +11,7 @@
 
 \usepackage{pgffor}
 \newcommand{\ListItem}[1]{\underline{\makebox[5cm][l]{#1}}}
-\newcommand{\minicontent}{\foreach \x in {চাল - দুঃ \hfill রাঃ\hfill সঃ\hspace{1.3cm},ডাল,তেল,লবণ,আলু,পেঁয়াজ,মরিচ,আদা,রসুন,হলুদ,মশলা,সবজি,মাছ/গোস্ত/ডিম,শসা/গাজর/লেবু,গ্যাসের বিল}{\ListItem{\x}\par\bigskip}}
+\newcommand{\minicontent}{\foreach \x in {চাল - দুঃ \hfill রাঃ\hfill সঃ\hspace{1.3cm},ডাল,তেল,লবণ,আলু,পেঁয়াজ,মরিচ,আদা,রসুন,হলুদ,মশলা,সবজি,মাছ/গোস্ত/ডিম,শসা/গাজর/লেবু,গ্যাসের বিল \hfill ১৫০/- টাকা}{\ListItem{\x}\par\bigskip}}
 \begin{document}
 \noindent
 \multido{}{6}{\begin{minipage}{0.33\textwidth}\minicontent\vspace{2cm}\end{minipage}
