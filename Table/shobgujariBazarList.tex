@@ -2,7 +2,7 @@
 \usepackage{multido}
 \usepackage{booktabs}
 \usepackage{enumitem}
-\usepackage[a4paper,left=0.5cm,top=0.3cm,bottom=0cm,right=0cm]{geometry}
+\usepackage[a4paper,left=0.5cm,top=1cm,bottom=0cm,right=0cm]{geometry}
 \usepackage{polyglossia}
 \setmainlanguage[numerals=Devanagari]{bengali}
 \setmainlanguage{bengali}
@@ -12,7 +12,7 @@
 
 \usepackage{pgffor}
 \newcommand{\ListItem}[1]{\underline{\makebox[5cm][l]{#1}}}
-\newcommand{\minicontent}{\foreach \x in {চাল,ডাল,তেল,লবণ,আলু,পেঁয়াজ,মরিচ,আদা,রসুন,হলুদ,মশলা,মাছ/গোস্ত/ডিম,শসা/গাজর/লেবু,সবজি,রিক্সা ভাড়া \hfill 40/- টাকা}{\ListItem{\x}\par\bigskip}}
+\newcommand{\minicontent}{\foreach \x in {চাল,ডাল,তেল,লবণ,আলু,পেঁয়াজ,মরিচ,আদা+রসুন,হলুদ,মশলা,মাছ/গোস্ত/ডিম,শসা/গাজর/লেবু,সবজি,রিক্সা ভাড়া \hfill 40/- টাকা}{\ListItem{\x}\par\bigskip}}
 \begin{document}
 \noindent
 \multido{}{6}
@@ -23,7 +23,7 @@
 \begin{itemize}[itemsep=0.0pt,leftmargin=*]
 \item বাজারের দোয়া পড়ে নিলে উত্তম হবে। 
 \end{itemize}
-\vspace{1cm}
+\vspace{1.6cm}
 \end{minipage}
 }
 \end{document}
