@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{forloop}
+\usepackage{polyglossia}
+\usepackage{booktabs}
+\usepackage{longtable,pdflscape,array}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage[a4paper,left=0.1cm,right=0.1cm,top=0.1cm,bottom=0.1cm]{geometry}
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+\renewcommand{\arraystretch}{2}
+\begin{document}
+\pagenumbering{gobble}
+\begin{center}
+বিভিন্ন department-এর PL শুরু এবং শেষের তালিকা
+%\begin{landscape}
+\noindent
+\begin{longtable}{
+    |p{0.13cm}|
+    >{\selectlanguage{english}}l|
+    >{\selectlanguage{english}}l|
+    p{2.3cm}|p{2.3cm}|p{1cm}|p{2.3cm}|p{1cm}|p{2.3cm}|p{2.3cm}|}
+  \hline
+\tiny{ক্রমিক নং} & Department & Year & PL শুরুর তারিখ & PL শেষের তারিখ & মোট PL (দিন) & পরীক্ষা শেষের তারিখ & ল্যাবের আগে বন্ধ (দিন) & ল্যাব শুরুর তারিখ & ল্যাব শেষের তারিখ\\
+\hline
+\rownumber & Chemistry & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Chemistry & 2nd &&&&&&&\\
+\hline
+\rownumber & Chemistry & 3rd &&&&&&&\\
+\hline
+\rownumber & Chemistry & 4th &&&&&&&\\
+\hline
+\rownumber & Chemistry & MS &&&&&&&\\
+\hline
+\rownumber & Physics & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Physics & 2nd &&&&&&&\\
+\hline
+\rownumber & Physics & 3nd &&&&&&&\\
+\hline
+\rownumber & Physics & 4th &&&&&&&\\
+\hline
+\rownumber & Physics & MS &&&&&&&\\
+\hline
+\rownumber & Math & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Math & 2nd &&&&&&&\\
+\hline
+\rownumber & Math & 3rd &&&&&&&\\
+\hline
+\rownumber & Math & 4th &&&&&&&\\
+\hline
+\rownumber & Math & MS &&&&&&&\\
+\hline
+\rownumber & Applied Math & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Applied Math & 2nd &&&&&&&\\
+\hline
+\rownumber & Applied Math & 3rd &&&&&&&\\
+\hline
+\rownumber & Applied Math & 4th &&&&&&&\\
+\hline
+\rownumber & Applied Math & MS &&&&&&&\\
+\hline
+\rownumber & Botany & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Botany & 2nd &&&&&&&\\
+\hline
+\rownumber & Botany & 3rd &&&&&&&\\
+\hline
+\rownumber & Botany & 4th &&&&&&&\\
+\hline
+\rownumber & Botany & MS &&&&&&&\\
+\hline
+\rownumber & Pharmacy & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Pharmacy & 2nd &&&&&&&\\
+\hline
+\rownumber & Physicsn & 3rd &&&&&&&\\
+\hline
+\rownumber & Pharmacy & 4th &&&&&&&\\
+\hline
+\rownumber & Pharmacy & MS &&&&&&&\\
+\hline
+\rownumber & EEE & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\tiny{ক্রমিক নং} & Department & Year & PL শুরুর তারিখ & PL শেষের তারিখ & মোট PL (দিন) & পরীক্ষা শেষের তারিখ & ল্যাবের আগে বন্ধ (দিন) & ল্যাব শুরুর তারিখ & ল্যাব শেষের তারিখ\\
+\hline
+\rownumber & EEE & 2nd &&&&&&&\\
+\hline
+\rownumber & EEE & 3rd &&&&&&&\\
+\hline
+\rownumber & EEE & 4th &&&&&&&\\
+\hline
+\rownumber & EEE & MS &&&&&&&\\
+\hline
+\rownumber & CSE & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & CSE & 2nd &&&&&&&\\
+\hline
+\rownumber & CSE & 3rd &&&&&&&\\
+\hline
+\rownumber & CSE & 4th &&&&&&&\\
+\hline
+\rownumber & CSE & MS &&&&&&&\\
+\hline
+\rownumber & ISRT & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & ISRT & 2nd &&&&&&&\\
+\hline
+\rownumber & ISRT & 3rd &&&&&&&\\
+\hline
+\rownumber & ISRT & 4th &&&&&&&\\
+\hline
+\rownumber & ISRT & MS &&&&&&&\\
+\hline
+\rownumber & Statistics & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Statistics & 2nd &&&&&&&\\
+\hline
+\rownumber & Statistics & 3rd &&&&&&&\\
+\hline
+\rownumber & Statistics & 4th &&&&&&&\\
+\hline
+\rownumber & Statistics & MS &&&&&&&\\
+\hline
+\rownumber & Nuclear Eng. & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Nuclear Eng. & 2nd &&&&&&&\\
+\hline
+\rownumber & Nuclear Eng. & 3rd &&&&&&&\\
+\hline
+\rownumber & Nuclear Eng. & 4th &&&&&&&\\
+\hline
+\rownumber & Nuclear Eng. & MS &&&&&&&\\
+\hline
+\rownumber & Robotics & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Robotics & 2nd &&&&&&&\\
+\hline
+\rownumber & Robotics & 3rd &&&&&&&\\
+\hline
+\rownumber & Robotics & 4th &&&&&&&\\
+\hline
+\rownumber & Robotics & MS &&&&&&&\\
+\hline
+\rownumber & Oceanography & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Oceanography & 2nd &&&&&&&\\
+\hline
+\rownumber & Oceanography & 3rd &&&&&&&\\
+\hline
+\rownumber & Oceanography & 4th &&&&&&&\\
+\hline
+\tiny{ক্রমিক নং} & Department & Year & PL শুরুর তারিখ & PL শেষের তারিখ & মোট PL (দিন) & পরীক্ষা শেষের তারিখ & ল্যাবের আগে বন্ধ (দিন) & ল্যাব শুরুর তারিখ & ল্যাব শেষের তারিখ\\
+\hline
+\rownumber & Oceanography & MS &&&&&&&\\
+\hline
+\rownumber & Zeology & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Zeology & 2nd &&&&&&&\\
+\hline
+\rownumber & Zeology & 3rd &&&&&&&\\
+\hline
+\rownumber & Zeology & 4th &&&&&&&\\
+\hline
+\rownumber & Zeology & MS &&&&&&&\\
+\hline
+\rownumber & Zoology & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Zoology & 2nd &&&&&&&\\
+\hline
+\rownumber & Zoology & 3rd &&&&&&&\\
+\hline
+\rownumber & Zoology & 4th &&&&&&&\\
+\hline
+\rownumber & Zoology & MS &&&&&&&\\
+\hline
+\rownumber & Fisheries & 1\textsuperscript{st} &&&&&&&\\
+\hline
+\rownumber & Fisheries & 2nd &&&&&&&\\
+\hline
+\rownumber & Fisheries & 3rd &&&&&&&\\
+\hline
+\rownumber & Fisheries & 4th &&&&&&&\\
+\hline
+\rownumber & Fisheries & MS &&&&&&&\\
+\bottomrule
+\end{longtable}
+\end{center}
+%\end{landscape}
+
+\vspace*{1cm}
+নিচের নমুনা অনুসারে লিখলে ভাল হয়\\
+
+\centering
+\noindent
+\begin{tabular}{
+    @{}p{0.13cm}
+    >{\selectlanguage{english}}l
+    >{\selectlanguage{english}}l
+    p{2.3cm}p{2.3cm}p{1.1cm}p{2.3cm}p{1.1cm}p{2.3cm}p{2.3cm}@{}}
+  \toprule
+\tiny{ক্রমিক নং} & Department & Year & PL শুরুর তারিখ & PL শেষের তারিখ & মোট PL (দিন) & পরীক্ষা শেষের তারিখ & ল্যাবের আগে বন্ধ (দিন) & ল্যাব শুরুর তারিখ & ল্যাব শেষের তারিখ\\
+\toprule
+01 & Chemistry & 1\textsuperscript{st} & 13/09/18 & 13/10/18 & 30 & 1/12/18 & 9 & 10/12/18 & 20/12/18\\
+\bottomrule
+\end{tabular}
+\end{document}

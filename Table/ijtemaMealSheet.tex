@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{forloop}
+\usepackage{enumitem}
 \usepackage[a4paper,left=0.1cm,top=0.1cm,bottom=0cm]{geometry}
 \newcommand{\aline}{\\\hline \arabic{theyflines} &&&&&&&&&&&&&&&&\rule{0cm}{0.4cm}}
 \begin{document}
@@ -12,10 +13,11 @@
 \begin{tabular}{|p{0.20cm}|p{2.75cm}|p{1cm}|p{1cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{2.50cm}|p{1.30cm}|p{1.30cm}|}
 \hline
 SL&Name& Room&Dept.&L&D&B&L&D&B&L&D&B&L&Deposit&Cost&Extra
-\forloop{theyflines}{1}{\value{theyflines} < 52}{\aline}\\
+\forloop{theyflines}{1}{\value{theyflines} < 51}{\aline}\\
 \hline
 \end{tabular}
-\begin{itemize}
-  \item use '\textbf{-}'(minus) sign for due in column named Extra. L = Launch, D = Dinner, B = Breakfast
+\begin{itemize}[itemsep=0.0pt,leftmargin=*]
+  \item L = Launch, D = Dinner, B = Breakfast
+  \item Use `\textbf{-}' ( minus ) sign for due in column named `Extra'.
 \end{itemize}
 \end{document}

@@ -5,20 +5,20 @@
 \setmainlanguage[numerals=Devanagari]{bengali}
 \setmainlanguage{bengali}
 \setotherlanguage{english}
-\newfontfamily\bengalifont[Script=Bengali]{Akaash}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
 \usepackage[a4paper,left=0.1cm,right=0.1cm,top=0.1cm,bottom=0.1cm]{geometry}
-\newcommand{\aline}{\\\hline \arabic{theyflines} &&&&&&&\rule{0cm}{1cm}}
+\newcommand{\aline}{\\\hline \arabic{theyflines} &&&&&&\rule{0cm}{1cm}}
 \begin{document}
 \begin{center}
-  Extension Building(South Building)\\
+  Extension Building ( South Building )\\
 যাদেরকে আমরা এখন পর্যন্ত ৩ দিনের জন্য বের করতে পারি নাই, তাদের নামের তালিকা 
 \end{center}
 \pagenumbering{gobble}
 \newcounter{theyflines}
 \noindent
-\begin{tabular}{|p{0.13cm}|p{5.2cm}|p{1.5cm}|p{1.3cm}|p{1cm}|p{1.4cm}|p{4cm}|p{2.9cm}|}
+\begin{tabular}{|p{0.13cm}|p{5.6cm}|p{1.7cm}|p{2cm}|p{1cm}|p{4cm}|p{3cm}|}
 \hline
-{\tiny  ক্রমিক} নং &  নাম &  রুম নং &  ডিপার্টমেন্ট &  বর্ষ &  সেশন &  মোবাইল নং &  জেলা
+{\tiny  ক্রমিক} নং &  নাম &  রুম নং &  ডিপার্টমেন্ট &  বর্ষ & মোবাইল নং &  জেলা
 \forloop{theyflines}{1}{\value{theyflines} < 22}{\aline}\\
 \hline
 \end{tabular}
@@ -27,11 +27,11 @@
 নিচের নমুনা অনুসারে লিখলে ভাল হয়\\ 
 
 \noindent
-\begin{tabular}{|p{0.13cm}|p{5.2cm}|p{1.5cm}|p{1.3cm}|p{1cm}|p{1.4cm}|p{4cm}|p{2.9cm}|}
+\begin{tabular}{|p{0.13cm}|p{5.6cm}|p{1.7cm}|p{2cm}|p{1cm}|p{4cm}|p{3cm}|}
 \hline
-{\tiny  ক্রমিক} নং &  নাম &  রুম নং &  ডিপার্টমেন্ট &  বর্ষ &  সেশন &  মোবাইল নং &  জেলা\\
+{\tiny  ক্রমিক} নং &  নাম &  রুম নং &  ডিপার্টমেন্ট &  বর্ষ & মোবাইল নং &  জেলা\\
 \hline
-01 & ভাই মোঃ আব্দুল্লাহ & ১৬১০  & EEE & ২য় & ১৬-১৭ & 01763492651 & কুড়িগ্রাম \\
+01 & ভাই মোঃ আব্দুল্লাহ & ১৬১০  & EEE & ২য় & 01763492651 & কুড়িগ্রাম \\
 \hline
 \end{tabular}
 \end{document}
