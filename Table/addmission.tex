@@ -1,0 +1,37 @@
+\documentclass[landscape]{article}
+\usepackage{forloop}
+\usepackage{polyglossia}
+\usepackage{booktabs}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage[a4paper,left=0.1cm,right=0.1cm,top=0.1cm,bottom=0.1cm]{geometry}
+\newcommand{\aline}{\\\hline \arabic{theyflines} &&&&&&&&&&&\rule{0cm}{1cm}}
+\renewcommand{\arraystretch}{2}
+\begin{document}
+\begin{center}
+বিভিন্ন বিশ্ববিদ্যালয়ে ভর্তি ইচ্ছুক ভাইদের নামের তালিকা
+\end{center}
+\pagenumbering{gobble}
+\newcounter{theyflines}
+\begin{tabular}{|p{0.13cm}|p{4cm}|p{3cm}|p{2cm}|p{1cm}|p{2cm}|p{3.5cm}|p{4cm}|p{1.5cm}|p{1cm}|p{1cm}|p{1cm}|}
+\hline
+{\tiny  ক্রমিক} নং &  নাম & মোবাইল নং & জেলা & পূর্বে লাগানো সময়(দিন) & বর্তমান নিয়ত & কোথায় কোথায় পরীক্ষা দিতে ইচ্ছুক & যার কাছে আছে তার নাম & সম্পর্ক & রুম নং & ডিপার্টমেন্ট & বর্ষ \\
+\hline
+01 & ভাই মোঃ আব্দুল্লাহ & 01763492651 & কুড়িগ্রাম & ৪০ & পরীক্ষার পর ১ চিল্লা & \selectlanguage{english}{DU,JU,JNU,CU} & ভাই মোঃ আতিক & বড় ভাই & ১৬১০  & \selectlanguage{english}{EEE} & \selectlanguage{english}{MS}\\
+\hline
+\end{tabular}\\
+
+উপরের  নমুনা অনুসারে লিখলে ভাল হয়\\ 
+
+%\vspace*{1cm}
+\noindent
+\begin{tabular}{|p{0.13cm}|p{4cm}|p{3cm}|p{2cm}|p{1cm}|p{2cm}|p{3.5cm}|p{4cm}|p{1.5cm}|p{1cm}|p{1cm}|p{1cm}|}
+\hline
+{\tiny  ক্রমিক} নং &  নাম & মোবাইল নং & জেলা & পূর্বে লাগানো সময়(দিন) & বর্তমান নিয়ত & কোথায় কোথায় পরীক্ষা দিতে ইচ্ছুক & যার কাছে আছে তার নাম & সম্পর্ক & রুম নং & ডিপার্টমেন্ট & বর্ষ \\
+\hline
+\forloop{theyflines}{1}{\value{theyflines} < 11}{\aline}\\
+\hline
+\end{tabular}
+\end{document}
