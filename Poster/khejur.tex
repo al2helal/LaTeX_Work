@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{multido}
+\usepackage{booktabs}
+\usepackage{enumitem,anyfontsize}
+\usepackage[a4paper,left=0cm,top=1cm,bottom=0cm,right=0cm]{geometry}
+\usepackage{polyglossia}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+%\newfontfamily\englishfont[Scale=MatchLowercase]{Linux Biolinum O}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\begin{document}
+\centering
+\multido{}{2}
+{{\fontsize{110}{132} \selectfont খেজুর পাওয়া যায়\\}{\fontsize{90}{108}\selectfont রুম নং - ১৪০৬\\ Ex-1, শহীদুল্লাহ হল\\}\vspace{2cm}}
+\end{document}
