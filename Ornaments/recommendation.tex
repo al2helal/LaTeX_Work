@@ -1,5 +1,14 @@
-\documentclass{scrartcl}
-\usepackage[banglamainfont=Akaash,banglattfont=Akaash]{latexbangla}
+%text taken from Mawlana Murshidul Islam, Jamia Arabia Haji Unus(Kawmi Madrasha)
+% ornamented and decorated by Md.Al-Helal
+\documentclass[12pt]{scrartcl}
+\usepackage{polyglossia}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.3}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
 
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc} 
@@ -24,9 +33,9 @@
 %   \node [Maroon] (text) {
 %   \begin{tabular}{ll}
 %     শিশুকে \\
-%     ভুল শেখাবেন না&সঠিক শেখাবেন।\\
-%     লোভ দেখাবেন না &পুরস্কার দেবেন \\
-%     নিরুৎসাহিত করবেন না&উৎসাহিত করবেন\\
+%     ভুল শেখাবেন না & সঠিক শেখাবেন।\\
+%     লোভ দেখাবেন না & পুরস্কার দেবেন \\
+%     নিরুৎসাহিত করবেন না & উৎসাহিত করবেন\\
 %     বকুনি দেবেন না&উপেদশ দেবেন \\
 %     বেয়াদব বলবেন না&আদব শেখাবেন \\
 %     নিঃসঙ্গ  রাখবেন না&সৎসঙ্গ দেবেন \\
@@ -68,22 +77,24 @@
 ]
    \node [Maroon] (text) {
    \begin{tabular}{ll}
-     শিশুকে \\
-     ভুল শেখাবেন না&সঠিক শেখাবেন।\\
+     \hspace{4.7cm} {\LARGE শিশুকে }\\
+\toprule
+     ভুল শেখাবেন না & সঠিক শেখাবেন।\\
      লোভ দেখাবেন না &পুরস্কার দেবেন \\
-     নিরুৎসাহিত করবেন না&উৎসাহিত করবেন \\
-     বকুনি দেবেন না&উপেদশ দেবেন \\
-     বেয়াদব বলবেন না&আদব শেখাবেন \\
-     নিঃসঙ্গ  রাখবেন না&সৎসঙ্গ দেবেন \\
-     ভয় দেখাবেন না&সাহস দেবেন \\
-     লজ্জা দেবেন না& শিখিয়ে দেবেন \\
-     ধমক দেবেন না&বুঝতে দেবেন \\
-     মিথ্যা বলবেন না&সত্য বলবেন \\
-     বেত্রাঘাত করবেন না &স্নেহ করবেন \\
-     নিন্দা করবেন না&ভালবাসবেন \\
-     অবেহলা করবেন না&গুরুত্ব দেবেন \\
-     মাওলানা মুরশিদুল আলম & মুহতামিম\\ 
-     জামিয়া আরাবিয়া হাজী ইউনুছ (কওমী মাদ্রাসা)
+     নিরুৎসাহিত করবেন না & উৎসাহিত করবেন \\
+     বকুনি দেবেন না & উপেদশ দেবেন \\
+     বেয়াদব বলবেন না & আদব শেখাবেন \\
+     নিঃসঙ্গ  রাখবেন না & সৎসঙ্গ দেবেন \\
+     ভয় দেখাবেন না & সাহস দেবেন \\
+     লজ্জা দেবেন না & শিখিয়ে দেবেন \\
+     ধমক দেবেন না & বুঝতে দেবেন \\
+     মিথ্যা বলবেন না & সত্য বলবেন \\
+     বেত্রাঘাত করবেন না & স্নেহ করবেন \\
+     নিন্দা করবেন না & ভালবাসবেন \\
+     অবেহলা করবেন না & গুরুত্ব দেবেন \\
+\bottomrule
+     \hspace{2.8cm}মাওলানা মুরশিদুল আলম (মুহতামিম)\\ 
+     \hspace{2.8cm}জামিয়া আরাবিয়া হাজী ইউনুছ (কওমী মাদ্রাসা)
     \end{tabular}
     };
 
