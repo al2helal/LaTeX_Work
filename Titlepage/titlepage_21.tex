@@ -1,22 +1,29 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass{article}
+\usepackage{tikz}
 \usepackage{fullpage}
-\usepackage{graphicx}
+\usepackage{geometry}
+\pagenumbering{gobble}
 \begin{document}
 \begin{titlepage}
 \centering
+%\includegraphics[width=2.8cm,height=3.4cm]{Image/dulogowhite.png}\\
+ \tikz[remember picture,overlay] \node[opacity=0.08, inner sep=-3pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{Image/dulogoblue.png}};
 {\scshape\LARGE University of Dhaka \par}
 \vspace{1cm}
-{\scshape\Large Assignment One\par}
+{\scshape\Large Department of Botany\par}
 \vspace{1.5cm}
-{\huge\bfseries Assignment on Vectors and Matrics\par}
+{\huge\bfseries Plant Physiology(304)\par}
 \vspace{2cm}
-{\Large\itshape Md.Al-Helal(Roll-51)\\Md.Rajeeb Talukdar(Roll-54)\par}
-\vfill
-Submitted to\\
+Submitted by \\
 \vspace{0.5cm}
-\textit{Dr. Amin Ahsan Ali} \\ Assistant Professor\\CSEDU
+{\Large Md.Shakherul Islam\\Roll:SH-55037\\Reg:2015-217-471\\Year:3\textsuperscript{rd}\\Session:2015-16\par}
+\vfill
+Submitted to \\
+\vspace{0.5cm}
+Md. Saiful Islam\\ Lecturer\\BOT
 \vfill
 % Bottom of the page
 {\large \today\par}
 \end{titlepage}
+\clearpage
 \end{document}

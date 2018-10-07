@@ -1,48 +1,32 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass{article}
+\usepackage{tikz}
 \usepackage{fullpage}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
-\usepackage{vmargin}
-\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
-
-\title{Operating Systems Lab}                                % Title
-
-\makeatletter
-\let\thetitle\@title
-
-\pagestyle{fancy}
-\fancyhf{}
-
+\usepackage{geometry}
+\pagenumbering{gobble}
 \begin{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{titlepage}
-    \centering
-    \vspace*{0.5 cm}
-    \includegraphics[height=3.4cm,width=2.5cm]{Image/dulogoblue.png}\\[1.0 cm]  % University Logo
-    \textsc{\LARGE University of Dhaka}\\[2.0 cm]  % University Name
-    \textsc{\Large CSE-3103}\\[0.5 cm]               % Course Code
-    \rule{\linewidth}{0.2 mm} \\[0.4 cm]
-    { \huge \bfseries \thetitle}\\
-    \rule{\linewidth}{0.2 mm} \\[1.5 cm]
-    
-    \begin{minipage}{0.6\textwidth}
-        \begin{flushleft} \large
-            \emph{Submitted To:}\\
-            Mahmood Jashim\\
-            Lecturer\\
-            Computer Science \& Engineering\\University of Dhaka
-            \end{flushleft}
-            \end{minipage}~
-            \begin{minipage}{0.4\textwidth}
-            
-            \begin{flushright} \large
-            \emph{Submitted By :} \\
-	    Md.Al-Helal\\
-	    Roll:SH-51
-        \end{flushright}
-        
-    \end{minipage}\\[2 cm]
+\centering
+%\includegraphics[width=2.8cm,height=3.4cm]{Image/dulogowhite.png}\\
+ \tikz[remember picture,overlay] \node[opacity=0.08, inner sep=-3pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{Image/dulogoblue.png}};
+{\scshape\LARGE University of Dhaka \par}
+{\scshape\Large Department of Botany\par}
+{\huge\bfseries Plant Physiology(304)\par}
+\vspace{2.5cm}
+Submitted by \\
+\vspace{0.5cm}
+\begin{center}
+  {\Large
+  \begin{tabular}{l}
+\textit{Name}: Md.Shakherul Islam\\\textit{Roll}: SH-55037\\\textit{Reg}: 2015-217-471\\\textit{Year}: 3\textsuperscript{rd}\\\textit{Session}: 2015-16
+\end{tabular}}
+\end{center}
+\vfill
+Submitted to \\
+\vspace{0.5cm}
+Md. Saiful Islam\\ Lecturer\\Botany
+\vfill
+% Bottom of the page
+{\large \today\par}
 \end{titlepage}
+\clearpage
 \end{document}
