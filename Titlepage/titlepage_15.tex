@@ -1,22 +1,26 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass{article}
+\usepackage{tikz}
 \usepackage{fullpage}
-\usepackage{graphicx}
+\usepackage{geometry}
+\pagenumbering{gobble}
 \begin{document}
 \begin{titlepage}
 \centering
+ \tikz[remember picture,overlay] \node[opacity=0.08, inner sep=-3pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{Image/dulogowhite.png}};
 {\scshape\LARGE University of Dhaka \par}
 \vspace{1cm}
-{\scshape\Large Assignment One\par}
+{\scshape\Large Assignment One(Group-4)\par}
 \vspace{1.5cm}
-{\huge\bfseries Assignment on Vectors and Matrics\par}
+{\huge\bfseries Assignment on Finite Languages, Automata and Computation\par}
 \vspace{2cm}
-{\Large Md.Al-Helal(Roll-51)\\Md.Rajeeb Talukdar(Roll-54)\par}
+{\Large Md.Al-Helal(Roll-51)\par}
 \vfill
-Submitted to\\
+Submitted to \\
 \vspace{0.5cm}
-Dr. Amin Ahsan Ali \\ Assistant Professor\\CSEDU
+Dr. Muhammad Asif Hossain Khan\\ Associate Professor\\CSEDU
 \vfill
 % Bottom of the page
 {\large \today\par}
 \end{titlepage}
+\clearpage
 \end{document}

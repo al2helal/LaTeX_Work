@@ -1,22 +1,48 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper]{article}
 \usepackage{fullpage}
 \usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+\title{Operating Systems Lab}                                % Title
+
+\makeatletter
+\let\thetitle\@title
+
+\pagestyle{fancy}
+\fancyhf{}
+
 \begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{titlepage}
-\centering
-{\scshape\LARGE University of Dhaka \par}
-\vspace{1cm}
-{\scshape\Large Assignment One\par}
-\vspace{1.5cm}
-{\huge\bfseries Assignment on Vectors and Matrics\par}
-\vspace{2cm}
-{\Large Md.Al-Helal(Roll-51)\\Md.Rajeeb Talukdar(Roll-54)\par}
-\vfill
-Submitted to\\
-\vspace{0.5cm}
-{\Large Dr. Amin Ahsan Ali} \\ Assistant Professor\\CSEDU
-\vfill
-% Bottom of the page
-{\large \today\par}
+    \centering
+    \vspace*{0.5 cm}
+    \includegraphics[height=3.4cm,width=2.5cm]{Image/dulogoblue.png}\\[1.0 cm]  % University Logo
+    \textsc{\LARGE University of Dhaka}\\[2.0 cm]  % University Name
+    \textsc{\Large CSE-3103}\\[0.5 cm]               % Course Code
+    \rule{\linewidth}{0.2 mm} \\[0.4 cm]
+    { \huge \bfseries \thetitle}\\
+    \rule{\linewidth}{0.2 mm} \\[1.5 cm]
+    
+    \begin{minipage}{0.6\textwidth}
+        \begin{flushleft} \large
+            \emph{Submitted To:}\\
+            Mahmood Jashim\\
+            Lecturer\\
+            Computer Science \& Engineering\\University of Dhaka
+            \end{flushleft}
+            \end{minipage}~
+            \begin{minipage}{0.4\textwidth}
+            
+            \begin{flushright} \large
+            \emph{Submitted By :} \\
+	    Md.Al-Helal\\
+	    Roll:SH-51
+        \end{flushright}
+        
+    \end{minipage}\\[2 cm]
 \end{titlepage}
 \end{document}
