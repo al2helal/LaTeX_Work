@@ -1,13 +1,12 @@
 \documentclass[a4paper]{article}
 \usepackage{fontawesome}
 \usepackage{tabularx}
-\usepackage{fullpage}
+\usepackage{fullpage,graphicx,tikz}
 
 %\usepackage{doublespace}
 %\setstretch{1.2}
 
 \usepackage{ae}
-%\usepackage[T1]{fontenc}
 \usepackage{CV}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -25,10 +24,17 @@
 \huge{\textsc{Curriculum Vitae}}
 \vspace{\baselineskip}
 
-{\Large\textsc{MD.Al-Helal}}\\
 \end{center}
 \vspace{1.5\baselineskip}
-
+\begin{minipage}{0.7\textwidth}
+\Large{\textsc{MD.Al-Helal}}\\
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{tikzpicture}
+    \clip(0,0)circle[radius=1.37cm,];
+    \node{\includegraphics[scale=0.1]{Image/myPhoto.jpg}};   
+\end{tikzpicture}
+\end{minipage}
 \section{Address}
 \noindent
 \begin{minipage}{.7\textwidth}
@@ -47,23 +53,12 @@
   \faStackOverflow{}  \href{https://stackoverflow.com/users/5697418/alhelal}{alhelal}
 \end{minipage}
 
-\section{Personal Details}
-\begin{CV}
-  \item[Gender] Male 
-  \item[Father] Md.Akbar Ali
-  \item[Mother] Most. Bilkis Begum
-  \item[Date of birth] 2nd June, 1996
-  \item[Permanent Address] Vill. Moyenpur, P.O. Kashimpur Hajigong-5460, Upa. Mithapukur, Dist. Rangpur
-  \item[Nationality] Bangladeshi
-  \item[Religion] Islam
-  \end{CV}
-
 \section{Career Objective}
 \begin{CV}
-\item To build up an efficient carrer in the computer science and engineering and thereby serve humanity.
+\item Solving real life problem those suffers humanity and making effective products for society by hard working and responsibility. And thereby build up an efficient career in the computer science and engineering and serve humanity.
   \end{CV}
 
-\section{Working Experience}
+\section{Project Experience}
 
 \begin{CV}
 
@@ -159,3 +154,4 @@ University of Dhaka\\
 \end{tabular}
 \caption{Titel\label{Tabelle: Label}}
 \end{table}
+

@@ -1,13 +1,12 @@
 \documentclass[a4paper]{article}
 \usepackage{fontawesome}
 \usepackage{tabularx}
-\usepackage{fullpage}
+\usepackage{fullpage,graphicx,tikz}
 
 %\usepackage{doublespace}
 %\setstretch{1.2}
 
 \usepackage{ae}
-%\usepackage[T1]{fontenc}
 \usepackage{CV}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -25,10 +24,17 @@
 \huge{\textsc{Curriculum Vitae}}
 \vspace{\baselineskip}
 
-{\Large\textsc{MD.Al-Helal}}\\
 \end{center}
 \vspace{1.5\baselineskip}
-
+\begin{minipage}{0.7\textwidth}
+\Large{\textsc{MD.Al-Helal}}\\
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{tikzpicture}
+    \clip(0,0)circle[radius=1.37cm,];
+    \node{\includegraphics[scale=0.1]{myPhoto.jpg}};   
+\end{tikzpicture}
+\end{minipage}
 \section{Address}
 \noindent
 \begin{minipage}{.7\textwidth}
@@ -159,3 +165,4 @@ University of Dhaka\\
 \end{tabular}
 \caption{Titel\label{Tabelle: Label}}
 \end{table}
+
