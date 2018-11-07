@@ -1,0 +1,111 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{booktabs,fullpage,caption,listings}
+\title{Recommendation on Making Nice Table}
+\author{Md.Al-Helal\\al2helal@gmail.com\\Computer Science \& Engineering\\University of Dhaka}
+\begin{document}
+\maketitle
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Plant Group & pH of Soil & Average Plant Growth(cm)\\
+\hline
+1 & 6.0 & 25.4\\
+\hline
+2 & 6.2 & 33.0\\
+\hline
+3 & 6.4 & 50.8\\
+\hline
+4 & 6.6 & 53.3\\
+\hline
+5 & 6.8 & 53.3\\
+\hline
+6 & 7.0 & 30.5\\
+\hline
+7 & 7.2 & 22.9\\
+\hline
+\end{tabular}
+\captionof{table}{Plant Growth in Soils With Different pH values}
+\textbf{Remove the verticle line}
+
+\begin{tabular}{ccc}
+\toprule
+Plant Group & pH of Soil & Average Plant Growth(cm)\\
+\toprule
+1 & 6.0 & 25.4\\
+\hline
+2 & 6.2 & 33.0\\
+\hline
+3 & 6.4 & 50.8\\
+\hline
+4 & 6.6 & 53.3\\
+\hline
+5 & 6.8 & 53.3\\
+\hline
+6 & 7.0 & 30.5\\
+\hline
+7 & 7.2 & 22.9\\
+\bottomrule
+\end{tabular}
+\captionof{table}{Plant Growth in Soils With Different pH values}
+\textbf{Remove the horizontal line}
+
+\begin{tabular}{ccc}
+Plant Group & pH of Soil & Average Plant Growth(cm)\\
+1 & 6.0 & 25.4\\
+2 & 6.2 & 33.0\\
+3 & 6.4 & 50.8\\
+4 & 6.6 & 53.3\\
+5 & 6.8 & 53.3\\
+6 & 7.0 & 30.5\\
+7 & 7.2 & 22.9\\
+\end{tabular}
+\captionof{table}{Plant Growth in Soils With Different pH values}
+\textbf{Use horizontal line on column's head}
+
+\begin{tabular}{ccc}
+\hline
+Plant Group & pH of Soil & Average Plant Growth(cm)\\
+\hline
+1 & 6.0 & 25.4\\
+2 & 6.2 & 33.0\\
+3 & 6.4 & 50.8\\
+4 & 6.6 & 53.3\\
+5 & 6.8 & 53.3\\
+6 & 7.0 & 30.5\\
+7 & 7.2 & 22.9\\
+\hline
+\end{tabular}
+\captionof{table}{Plant Growth in Soils With Different pH values}
+\textbf{Use} \verb|\toprule| \textbf{and} \verb|\bottomrule| \textbf{instead of} \verb|\hline|
+
+\begin{tabular}{ccc}
+\toprule
+Plant Group & pH of Soil & Average Plant Growth(cm)\\
+\toprule
+1 & 6.0 & 25.4\\
+2 & 6.2 & 33.0\\
+3 & 6.4 & 50.8\\
+4 & 6.6 & 53.3\\
+5 & 6.8 & 53.3\\
+6 & 7.0 & 30.5\\
+7 & 7.2 & 22.9\\
+\bottomrule
+\end{tabular}
+\captionof{table}{Plant Growth in Soils With Different pH values}
+\textbf{Remove extra left and right part of the horizontal line}
+
+\begin{tabular}{@{}ccc@{}}
+\toprule
+Plant Group & pH of Soil & Average Plant Growth(cm)\\
+\toprule
+1 & 6.0 & 25.4\\
+2 & 6.2 & 33.0\\
+3 & 6.4 & 50.8\\
+4 & 6.6 & 53.3\\
+5 & 6.8 & 53.3\\
+6 & 7.0 & 30.5\\
+7 & 7.2 & 22.9\\
+\bottomrule
+\end{tabular}
+\captionof{table}{Plant Growth in Soils With Different pH values}
+\end{document}
