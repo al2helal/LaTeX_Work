@@ -1,0 +1,34 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{fullpage,hyperref}
+\usepackage{cite}
+\begin{document}
+This is a sample tutorial for showing how to add a reference in a file using \LaTeX{} easily.
+
+In cisco press document of November, 2004 they show some network design tecnique with respect to QoS.
+
+Now, I want to add the document reference. Then, I have to load package \textit{cite} using command \textit{usepackage\{cite\}} in the preamble(before \textit{\textbackslash begin\{document\}}). And make a file called \textit{bibliography} in the same location. Add your reference in biblatex style as following in the file.
+\begin{verbatim}
+@report{CiscoPressNovember2004,
+  author      = "Szigeti, T. Hattingh, C.",
+  institution = "Cisco",
+  publisher   = "Cisco Press",
+  date        = "2014-11",
+  title       = "End-to-End {QoS} Network Design: Quality of Service in {LAN}s, {WAN}s",
+  type        = "techreport",
+}
+\end{verbatim}
+You can find bibtex file for your title in \url{https://liinwww.ira.uka.de/bibliography/}
+Then use the reference keyword in your document as parameter in \textit{cite\{keyword\}} command. Here, the \textit{keyword} is \textit{CiscoPressNovember2004}.
+
+For this case, In cisco press document of November, 2004\cite{CiscoPressNovember2004} they show some network design tecnique with respect to QoS.
+Then add two line \textit{bibliographystyle\{plain\}} and \textit{bibliography\{bibliography\}} before the \textit{\textbackslash end\{document\}}
+Finally, you have to run your file as follows - 
+\begin{verbatim}
+pdflatex filename.tex
+bibtex filename.aux
+pdflatex filename.tex
+pdflatex filename.tex
+\end{verbatim}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+\end{document}
