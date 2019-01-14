@@ -1,0 +1,33 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{multido,graphicx,tikz}
+\usepackage{booktabs}
+\usepackage{enumitem,anyfontsize}
+\usepackage[a4paper,left=0cm,top=0cm,bottom=0cm,right=0cm]{geometry}
+\usepackage{polyglossia}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+%\newfontfamily\englishfont[Scale=MatchLowercase]{Linux Biolinum O}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\begin{document}
+\centering
+\multido{}{12}
+{
+\selectlanguage{english}
+\begin{minipage}{0.43\textwidth}
+  \begin{tikzpicture}[overlay]
+    \draw[green!50!black,
+          ultra thick,
+          rotate = 0,
+          rounded corners] (5.8,-1.2) rectangle (8.8,-2.4);
+    \node[
+          rotate = 0] at (7.2,-1.5) {\large Neghal};
+\node[
+          rotate = 0] at (7.3,-2) {\large Price: 220 tk};
+  \end{tikzpicture}
+Dabbas, Zahdi, Lulu, Neghal \selectlanguage{bengali} ও\selectlanguage{english} Moriom \selectlanguage{bengali}খেজুর,\\ শুকনা খেজুর, বরই, কালোজিরা, সরিষা ও  লিচু ফুলের মধু, কালোজিরা ও তিলের তেল, কাঠবাদাম, কিসমিস, কালোজিরা পাওয়া যায়\\\selectlanguage{english}01515-611989(Al-Helal, CSE)\\
+\selectlanguage{bengali}রুম \selectlanguage{english}- 1406, \selectlanguage{english}Ex-1, \selectlanguage{bengali}শহীদুল্লাহ হল\\
+\selectlanguage{english}\includegraphics[height=\fontcharht\font`\B]{Image/facebook-icon.png} facebook.com/Honey\&Date\\ website: https://al2helal.github.io/business.html\\\selectlanguage{bengali} [** ৫০০ টাকার জিনিস কিনলে ফ্রি হল ডেলিভারি **]
+\end{minipage}\vspace{0.3cm}
+}
+\end{document}
