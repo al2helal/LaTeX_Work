@@ -1,0 +1,114 @@
+%compose by Md. Al-Helal, al2helal@gmail.com, CSEDU 21 batch
+%raw content by Sakib Ahmad, CSEDU, 25 batch
+%content modification and improvement by Md. Al-Helal
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath,multirow,booktabs,fullpage,tabularx,graphicx}
+\begin{document}
+ \section*{Theory}
+Kirchoff's current law is a law described  by German's physicist Gustav Kirchoff's that is used in the study of parallel circuit. It states that the sum of all current is entering a circuit junction is equal to the sum of the current's leaving it. The algebraic sum of the current's meeting in a node is equal to zero. Some conductor's have current's leading to node where as some have current's leading away from node. Assuming the incoming current to be positive and the outgoing current is negative.
+\begin{figure}[h]
+\centering
+ \includegraphics[scale=0.7]{Image/kcl.png}
+\caption{Kirchoff's Current Law}
+ \end{figure}
+
+Applying \textit{KCL} at node we have,
+\begin{equation*}
+ I_1+I_2+I_3-I_4-I_5=0
+ \end{equation*}
+ \begin{equation*}
+\implies I_1+I_2+I_3=I_4+I_5
+\end{equation*}
+Consider a circuit with $3$ resistor in a parallel ($R_{T_1}$) and as same circuit another two resistors in parallel ($R_{T_2}$) then total equivalent values of resistance ($R_T$) is given by-
+\begin{equation}
+ R_T=R_{T_1}+R_{T_2}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}}+\frac{R_4\times R_5}{R_4+R_5}
+\end{equation}
+So, for first three parallel resistors voltage is given by-
+\begin{equation}
+ V_1=\frac{V}{R_1}\times R_{T_1}
+\end{equation}
+Again, as same as for $R_4$ and $R_5$ two parallel resistors voltage is given by -
+\begin{equation}
+ V_2=\frac{V}{R_T}\times R_{T_2}
+\end{equation}
+A equation to measure each resistor's current flow is given by-
+\begin{equation}
+ I=\frac{V}{R}
+\end{equation}
+
+\section*{Apparatus}
+\begin{itemize}
+ \item Multimeter
+ \item Wire
+ \item DC power circuit
+ \item Trainer Board
+ \item Resistors ($2.65 K\Omega, 3.86 k\Omega, 10.02k\Omega, 2.695 k\Omega, 8.53 k\Omega$)
+\end{itemize}
+
+\section*{Procedure}
+\begin{itemize}
+ \item At first, we had to connect the power source and turn on the switch and check if everything functioned properly.
+ \item Then we took five resistors of different values using the multimeter the value of the five resistors were checked.
+\item Three of the resistors were first connected in parallel and that arrangement was connected in series with the other two resistors which were connected in parallel themselves. 
+ 
+ %\item Each of the resistors were set on the bread board one at a time. Here, first three resistors ($R_1,R_2,R_3$) were set on parallel and as same circuit other two resistors ($R_4,R_5$) were set on parallel in other two points. Using a two-connecting wire one end was connected to the ground and the other end to the voltage source of the trainer board.
+ \item We used the multimeter and Knobs to calibrate the voltage we wished to use.
+ \item After setting up the voltage the parts for three wires on the multimeter were charged and connected to the circuit so that we could calculate the total current ($I_s$)
+ \item Then we calculated the theoretical result of the total resistance ($R_s$) using the equation
+\begin{equation}
+ R_s=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}}+\frac{R_1\times R_2}{R_1+R_2}
+\end{equation}
+\item After calculated total resistance, then we calculated the theoretical result of current using the equation
+\begin{equation}
+ I_s=\frac{V}{R_T}
+\end{equation}
+\item After completing resistance we calculated voltage ($V_1$) of three parallel resistors ($R_1, R_2, R_3$) and calculated each resistor's current flow ($I_1, I_2, I_3$). Similarly, we calculated voltage ($V_2$) and current flow of ($I_4, I_5$) of other two parallel resistors ($R_4, R_5$).
+\item Then we calculated theoretical and practical value of $I_e (I_1+I_2+I_3)$ and $I_o (I_4+I_5)$ where $I_e$ is summation of current leading to node and $I_o$ is summation of current away from node.
+\item These procedures were followed five times for each resistors.
+\item After that we calculated the error of the practical result comparing with $I_e$ and $I_o$ using the equation
+\begin{equation}
+ \left|\frac{I_o-I_e}{I_e}\right|\times 100\%
+\end{equation}
+\item Finally, we calculated the average error and confirmed that it was under $5\%$
+
+\end{itemize}
+
+\section*{Result}
+\begin{table}[!htbp]
+\begin{tabularx}{\columnwidth}{@{}X|XX|XX|XX|XX|XX|XX@{}}
+\toprule
+\multirow{2}{*}{Volt.} & \multicolumn{2}{c|}{$I_s$} & \multicolumn{2}{c|}{$I_1$} & \multicolumn{2}{c|}{$I_2$} & \multicolumn{2}{c|}{$I_3$} & \multicolumn{2}{c|}{$I_4$} & \multicolumn{2}{c}{$I_5$}\\
+\cline{2-13}
+& The & Prac & The & Prac & The & Prac & The & Prac & The & Prac & The & Prac\\
+\cline{1-13}
+2.16 & 0.634 & 0.63 & 0.324 & 0.32 & 0.222 & 0.21 & 0.083 & 0.08 & 0.48 & 0.47 & 0.151 & 0.15\\
+4.98 & 1.46 & 1.45 & 0.747 & 0.74 & 0.512 & 0.51 & 0.197 & 0.19 & 1.1057 & 1.105 & 0.349 & 0.34\\
+8.14 & 2.38 & 2.37 & 1.22 & 1.21 & 0.836 & 0.83 & 0.322 & 0.32 & 1.807 & 1.80 & 0.571 & 0.57\\
+12.05 & 3.537 & 3.53 & 1.811 & 1.80 & 1.24 & 1.23 & 0.479 & 0.47 & 2.68 & 2.682 & 0.847 & 0.84\\
+15.06 & 4.42 & 4.41 & 2.27 & 2.26 & 1.55 & 1.54 & 0.600 & 0.588 & 3.354 & 3.35 & 1.1059 & 1.05\\
+\bottomrule
+\end{tabularx}
+\caption{Result of difference reading}
+\end{table}
+
+
+\begin{table}[!htbp]
+\begin{tabularx}{\columnwidth}{@{}X|XX|XX|X@{}}
+\toprule
+\multirow{2}{*}{Voltage} & \multicolumn{2}{c|}{$I_e=I_1+I_2+I_3$} & \multicolumn{2}{c|}{$I_o=I_4+I_5$} & \multirow{2}{*}{Practical $\left|\frac{I_o-I_e}{I_e}\right|\times 100\%$}\\
+\cline{2-5}
+ & Theo. & Pra. & Theo. & Prac.\\
+ \cline{1-6}
+ 2.16 & 0.629 & 0.61 & 0.631 & 0.62 & 1.63\\
+ 4.98 & 1.456 & 1.44 & 1.454 & 1.445 & 0.347\\
+ 8.14 & 2.378 & 2.36 & 2.378 & 2.37 & 0.423\\
+ 12.05 & 3.53 & 3.5 & 3.52 & 3.522 & 0.628\\
+ 15.06 & 4.42 & 4.388 & 4.413 & 4.4 & 0.273\\
+\bottomrule
+\end{tabularx}
+\caption{Error Chart}
+\end{table}
+
+\section*{Discussion}
+The experiment was done very carefully and every connection were checked before measuring the current so that measurement is quite accurate. The difference between the current we got from the multimeter's reading and the theoretical value is very low. And, if we look average error (\%), we can see that it is lower than $2\%$. So, with that in mind we can say that this experiment has been done successfully.
+\end{document}
