@@ -1,0 +1,55 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{multido}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage[a4paper,left=0cm,top=0.5cm,bottom=0cm,right=0cm]{geometry}
+\usepackage{polyglossia}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+%\newfontfamily\englishfont[Scale=MatchLowercase]{Linux Biolinum O}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage{pgffor}
+\begin{document}
+\noindent
+\multido{}{9}{
+\begin{minipage}{0.323\textwidth}
+\begin{center}
+শবগুজারীর সাথীদের তালিকা
+\end{center}
+\centering
+\begin{tabular}{@{}p{0.6cm}|ll|p{1.4cm}@{}}
+ক্রমিক নং & সাথীর নাম & রুম নং & টাকা\\
+\toprule
+& মোঃ নাজমুল ভাই & ১৪০৩ & \\
+\hline
+& মোঃ আল-হেলাল & ১৪০৬ & \\
+\hline
+& মোঃ রাজিন সালেহ & ১৪০৬ & \\
+\hline
+& মোঃ আতাউল্লাহ খান & ১৪০৬ & \\
+\hline
+& মোঃ মোতাহার & ১৪০৬ & \\
+\hline
+& মোঃ শাকিরুল & ১৪০৬ & \\
+\hline
+& মোঃ আহমদ মুসা & ১২০১ & \\
+\hline
+& মোঃ রায়হান & ১২০১ & \\
+\hline
+& মোঃ জিহাদ & ১২০১ & \\
+\hline
+& মোঃ মশিউর & ১২০১ & \\
+\hline
+& মোঃ খায়রুল & ১২০১ & \\
+\hline
+& মোঃ মনির & ১২০১ & \\
+\hline
+& মোঃ হাসনাত & ১১০২ & \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\vspace{0.4cm}
+%\hspace{-0.2cm}
+}
+\end{document}
