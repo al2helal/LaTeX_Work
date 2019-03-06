@@ -1,0 +1,185 @@
+\documentclass[usenames,dvipsnames]{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{tikz,multicol,forest}
+\usepackage{filecontents}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithm}
+\usetikzlibrary{arrows.meta}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor,booktabs,multirow,tabularx}
+\usetheme{Madrid}
+\logo{%
+  \vspace{-0.3cm} \includegraphics[width=1cm,height=1cm,keepaspectratio]{Image/DUlogo.png}%
+  \hspace{\dimexpr\paperwidth-2cm-5pt}%
+  \includegraphics[width=1cm,height=1cm,keepaspectratio]{Image/cseduT.png}%
+  %\includegraphics[width=1cm,height=1cm,keepaspectratio]{example-image-a}%
+}
+\begin{document}
+  \title{Bangladesh Bank}
+  \author[Md.Al-Helal]{Md. Al-Helal}
+\institute[CSEDU]{Computer Science \& Engineering\\University of Dhaka}
+\date{February 01, 2019}
+\makeatletter
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.22\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.73\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+  }%
+  \begin{beamercolorbox}[wd=.05\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}%
+    \usebeamertemplate{page number in head/foot}%
+    \hspace*{1ex} 
+  \end{beamercolorbox}
+  \vskip0pt%
+}
+\makeatother
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\begin{frame}
+\frametitle{Contents}
+\tableofcontents
+\end{frame}
+
+\section{Background}
+\begin{frame}
+\frametitle{Background}
+Bangladesh Bank is the central bank of Bangladesh and member of the \textbf{Asian Clearing Union}.\\
+The bank is active in developing \textbf{green banking} and financial inclusion policy and is an important member of the Alliance for Financial Inclusion. Bangladesh Financial Intelligence Unit (\textbf{BFIU}) got the membership of \textbf{Egmont Group}.
+\end{frame}
+
+\begin{frame}
+ \frametitle{Background}
+ \begin{itemize}
+  \item First central bank in the world to introduce a \textbf{dedicated hotline (16236)} for the populace to complain any banking related problem.
+\item First central bank in the world to issue a \textbf{Green Banking Policy}.
+\item To acknowledge this contribution, then-governor \textbf{Dr. Atiur Rahman} was given the title \textbf{Green Governor} at the 2012 United Nations Climate Change Conference, held at the Qatar National Convention Center in Doha.
+  \end{itemize}
+  \end{frame}
+
+\section{History}
+\begin{frame}[allowframebreaks]
+\frametitle{History}
+\begin{itemize}
+\item After the Independence War and the eventual independence of Bangladesh, the Government of Bangladesh reorganized the \textbf{Dhaka branch} of the \textbf{State Bank of Pakistan} as the central bank of the country, naming it \textbf{Bangladesh Bank}.
+\item This \textbf{re-organization} was done pursuant to \textbf{Bangladesh Bank Order, 1972}, and the Bangladesh Bank came into existence.
+\item The \textbf{1972} Mujib government pursued a pro-socialist agenda. In 1972, the government decided to \textbf{nationalize} all banks to \textbf{channel funds} to the public sector and to prioritize credit to those sectors that sought to \textbf{reconstruct} the \textbf{war-torn country} – mainly \textbf{industry} and \textbf{agriculture}.
+\item In \textbf{1982}, the first reform program was initiated, wherein the government \textbf{denationalised two of the six} nationalised commercial banks and permitted private local banks to compete in the banking sector.
+\item In \textbf{1986}, a \textbf{National Commission on Money, Banking and Credit} was appointed to deal with the problems of the banking sector, and a number of steps were taken for the recovery targets for the nationalised commercial banks and development financial institutions and prohibiting \textbf{defaulters} from getting new loans.
+\end{itemize}
+\end{frame}
+
+\section{Branch offices}
+\begin{frame}
+\frametitle{Branch Officies}
+\begin{multicols}{2}
+\begin{itemize}
+\item Motijheel
+\item Sadarghat
+\item Bogura
+\item Chattogram
+\item Rajshahi
+\item Barishal
+\item Khulna
+\item Sylhet
+\item Rangpur
+\item Mymensingh
+\end{itemize}
+\end{multicols}
+
+\end{frame}
+
+\section{Functions}
+\begin{frame}
+\frametitle{Functions}
+\begin{itemize}
+\item Formulation and implementation of monetary and credit policies.
+\item Regulation and supervision of banks and non-bank financial institutions, promotion and development of domestic financial markets.
+\item Management of the country's international reserves.
+\item Issuance of currency notes.
+\item Regulation and supervision of the payment system.
+\item Acting as banker to the government .
+\item Money laundering prevention.
+\item Collection and furnishing of credit information.
+\item Implementation of the Foreign Exchange Regulation Act.
+\item Managing a deposit insurance scheme .
+\end{itemize}
+\end{frame}
+
+\section{Organisation}
+\begin{frame}
+\frametitle{Organisation}
+\begin{itemize}
+\item The bank's highest official is the governor. His seat is in Motijheel, Dhaka. The governor chairs the board of directors.
+\item The \textbf{executive staff} is responsible for the bank's day-to-day affairs.
+\item \textbf{Departments:} \begin{itemize}
+                             \item Debt Management
+                             \item Law and so on
+                            \end{itemize}
+Each department is headed by one or more general managers.
+\item The Bank has \textbf{10 physical branches}. Each is headed by a \textbf{general manager}. Headquarters are located in the \textbf{Bangladesh Bank Building} in Motijheel, which has two general managers. 
+\end{itemize}
+\end{frame}
+
+\section{Hierarchy}
+\begin{frame}
+\frametitle{Hierarchy}
+\begin{forest}
+  for tree={
+    align=center,
+    parent anchor=south,
+    child anchor=north,
+    font=\sffamily,
+    edge={thick, -{Stealth[]}},
+    l sep+=10pt,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}] (!u.parent anchor) -- +(0,-10pt) -| (.child anchor)\forestoption{edge label};
+    },
+    if level=0{
+      inner xsep=0pt,
+      tikz={\draw [thick] (.south east) -- (.south west);}
+    }{}
+  }
+  [Executive Staff
+    [Governors
+    [Executive Directors
+    [General Manager]]
+    [Economic Advisor]]
+    [Three Deputy Governors]
+  ]
+\end{forest}
+\begin{itemize}
+\item The \textbf{Executive Staff} is responsible for \textbf{daily affairs}.
+\item Although the \textbf{general managers} come under the \textbf{executive directors} they are not part of the executive staff.
+\item The \textbf{board of directors} consists of the bank's \textbf{governor} and \textbf{eight other members} responsible for the policies undertaken by the bank.
+\end{itemize}
+\end{frame}
+
+\section{Publications}
+\begin{frame}
+\frametitle{Publications}
+\begin{itemize}
+\item Annual Report
+\item Bangladesh Bank Quarterly
+\item Monetary Policy Review
+\item CSR Initiatives in Banks
+\item BBTA Journal : Thoughts on Banking and Finance
+\item Annual Report on Green Banking
+\item Import Payments
+\item Financial Stability Assessment Report
+\end{itemize}
+\end{frame}
+
+\begin{frame}{\phantom{}}
+ % \color{Brown}
+  \color{Sepia}
+  \centering \Huge\textbf{Thank You}
+\end{frame}
+\end{document}
