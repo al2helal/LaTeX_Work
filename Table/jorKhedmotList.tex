@@ -7,7 +7,7 @@
 \setotherlanguage{english}
 \newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
 \usepackage[a4paper,left=0.1cm,right=0.1cm,top=0cm,bottom=0.1cm]{geometry}
-\newcommand{\aline}{\\\hline \arabic{theyflines} &&&\rule{0cm}{1cm}}
+\newcommand{\aline}{\\\hline \arabic{theyflines} &&&\rule{0cm}{0.8cm}}
 \begin{document}
 \begin{center}
 %Extension Building - 1\\
@@ -80,7 +80,7 @@
 \begin{tabular}{|p{6cm}|p{3cm}|p{5cm}|p{4cm}|}
 \toprule
 নাম & রুম নং & আইটেমের নাম & পরিমাণ
-\forloop{theyflines}{1}{\value{theyflines} < 26}{\aline}\\
+\forloop{theyflines}{1}{\value{theyflines} < 31}{\aline}\\
 \toprule
 \end{tabular}
 \end{document}
