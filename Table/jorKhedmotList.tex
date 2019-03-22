@@ -16,13 +16,11 @@
 \pagenumbering{gobble}
 \newcounter{theyflines}
 \noindent
-\begin{tabular}{@{}lll|p{13cm}}
+\begin{tabular}{@{}lll|p{15cm}}
 \toprule
 ক্রমিক নং &  নাম &  পরিমাণ & আপনি দিতে ইচ্ছুক (+ চিহ্ন দিয়ে শুধু পরিমাণ লিখুন, আর অপর পৃষ্টায় নাম লিখুন )\\
 \toprule
 ০১ & চাল & ৩০ কেজি &\\
-\hline
-\rule{0cm}{1cm}
 \hline
 ০২ & গরু & ৩০ কেজি &\\
 \hline
@@ -57,7 +55,7 @@
 
 \textbf{পায়েসের জন্য}\\
 \noindent
-\begin{tabular}{@{}lll|p{13cm}}
+\begin{tabular}{@{}lll|p{15cm}}
 \toprule
 ক্রমিক নং &  নাম &  পরিমাণ & আপনি দিতে ইচ্ছুক (+ চিহ্ন দিয়ে শুধু পরিমাণ লিখুন, আর অপর পৃষ্টায় নাম লিখুন )\\
 \toprule
@@ -73,7 +71,14 @@
 \bottomrule
 \end{tabular}
 \newpage
-\begin{tabular}{|p{6cm}|p{2cm}|p{3cm}|p{4cm}|}
+\begin{tabular}{|p{6cm}|p{3cm}|p{5cm}|p{4cm}|}
+\toprule
+নাম & রুম নং & আইটেমের নাম & পরিমাণ
+\forloop{theyflines}{1}{\value{theyflines} < 26}{\aline}\\
+\toprule
+\end{tabular}
+\newpage
+\begin{tabular}{|p{6cm}|p{3cm}|p{5cm}|p{4cm}|}
 \toprule
 নাম & রুম নং & আইটেমের নাম & পরিমাণ
 \forloop{theyflines}{1}{\value{theyflines} < 26}{\aline}\\
