@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage{forloop}
 \usepackage{polyglossia}
 \usepackage{booktabs}
@@ -6,7 +6,7 @@
 \setmainlanguage{bengali}
 \setotherlanguage{english}
 \newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
-\usepackage[a4paper,left=0.1cm,right=0.1cm,top=0.1cm,bottom=0.1cm]{geometry}
+\usepackage[a4paper,left=0.1cm,right=0.1cm,top=0cm,bottom=0.1cm]{geometry}
 \newcommand{\aline}{\\\hline \arabic{theyflines} &&&\rule{0cm}{1cm}}
 \begin{document}
 \begin{center}
@@ -16,6 +16,8 @@
 \pagenumbering{gobble}
 \newcounter{theyflines}
 \noindent
+\bgroup
+\def\arraystretch{2.4}
 \begin{tabular}{@{}lll|p{15cm}}
 \toprule
 ক্রমিক নং &  নাম &  পরিমাণ & আপনি দিতে ইচ্ছুক (+ চিহ্ন দিয়ে শুধু পরিমাণ লিখুন, আর অপর পৃষ্টায় নাম লিখুন )\\
@@ -51,8 +53,10 @@
 ১৫ & জায়ফল যতি & ৫০ টাকা &\\
 \bottomrule
 \end{tabular}
-\\
-
+\hrule
+\hrule
+\hrule
+\vspace{0.5cm}
 \textbf{পায়েসের জন্য}\\
 \noindent
 \begin{tabular}{@{}lll|p{15cm}}
@@ -70,14 +74,9 @@
 ০৫ & চিনাবাদাম & ৫০০ গ্রাম & \\
 \bottomrule
 \end{tabular}
+\egroup
 \newpage
-\begin{tabular}{|p{6cm}|p{3cm}|p{5cm}|p{4cm}|}
-\toprule
-নাম & রুম নং & আইটেমের নাম & পরিমাণ
-\forloop{theyflines}{1}{\value{theyflines} < 26}{\aline}\\
-\toprule
-\end{tabular}
-\newpage
+\noindent
 \begin{tabular}{|p{6cm}|p{3cm}|p{5cm}|p{4cm}|}
 \toprule
 নাম & রুম নং & আইটেমের নাম & পরিমাণ
