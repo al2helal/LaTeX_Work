@@ -2,26 +2,29 @@
 %date 31 March, 2019
 \documentclass[a4paper,12pt]{article}
 \usepackage{amsmath,commath,multirow,booktabs,fullpage,tabularx,graphicx,float}
+\usepackage[table]{xcolor}
 \author{Md. Al-Helal\\Computer Science and Engineering\\University of Dhaka}
-\title{Assignment 1}
+\title{CSE536 – Game Theory and Mechanism Design\\ 
+Assignment 1, Spring Semester 2019}
+\date{April 6, 2019}
 \begin{document}
 \maketitle
 \begin{enumerate}
 \item
-\item
+\item%2
 \begin{enumerate}
-\item
+\item%2(a)
 \begin{table}[H]
 \centering
 \begin{tabular}{@{}llll@{}}
 \toprule
-& & \multicolumn{2}{c}{\bfseries Column}\\
-& & left & right\\
-\multirow{2}{*}{\bfseries Row} & Up & 1 & 4\\
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right\\
+\multirow{2}{*}{\bfseries ROW} & Up & 1 & 4\\
  & Down & 2 & 3\\
 \bottomrule
 \end{tabular}
-\caption{Original Strategies}
+\caption{Strategies of question 2(a)}
 \end{table}
 
 As the above strategies is of a zero-sum game, so we can also shown the above strategies as follows:
@@ -30,9 +33,9 @@ As the above strategies is of a zero-sum game, so we can also shown the above st
 \centering
 \begin{tabular}{@{}llll@{}}
 \toprule
-& & \multicolumn{2}{c}{\bfseries Column}\\
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
 & & Left & Right\\
-\multirow{2}{*}{\bfseries Row} & Up & 1,-1 & 4,-4\\
+\multirow{2}{*}{\bfseries ROW} & Up & 1,-1 & 4,-4\\
  & Down & 2,-2 & 3,-3\\
 \bottomrule
 \end{tabular}
@@ -46,42 +49,59 @@ Table \ref{tab:completea} shows that COLUMN player gets more payoff in `Left' mo
 \centering
 \begin{tabular}{@{}ccc@{}}
 \toprule
-& & \multicolumn{1}{c}{\bfseries Column}\\
+& & \multicolumn{1}{c}{\bfseries COLUMN}\\
 & & Left\\
-\multirow{2}{*}{\bfseries Row} & Up & 1,-1\\
+\multirow{2}{*}{\bfseries ROW} & Up & 1,-1\\
  & Down & 2,-2\\
 \bottomrule
 \end{tabular}
 \caption{After elimination of column `Right'}
 \end{table}
 
-Then, ROW player always select `Down' for better payoff than `Left' ($2>1$). So, here `Up' is dominated. So, the nash equilibrium is (`Down',`Left').
+Then, ROW player always select `Down' for better payoff than `Left' ($2>1$). So, here `Up' is dominated. We can eliminated row `Up'.
 
 \begin{table}[H]
 \centering
 \begin{tabular}{@{}ccc@{}}
 \toprule
-& & \multicolumn{1}{c}{\bfseries Column}\\
+& & \multicolumn{1}{c}{\bfseries COLUMN}\\
 & & Left\\
-\multirow{2}{*}{\bfseries Row} & Down & 2,-2\\
+{\bfseries ROW} & Down & 2,-2\\
 \bottomrule
 \end{tabular}
 \caption{After elimination of row `Up'}
 \end{table}
 
+ So, the nash equilibrium is (`Down',`Left').
 
-\item
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right && Min\\
+\multirow{4}{*}{\bfseries ROW} & Up & 1 & 4 &$\rightarrow$& 1\\
+ & Down & 2 & 3 &$\rightarrow$& 2\\
+ & & $\downarrow$ & $\downarrow$ & & Max$\downarrow$\\
+ & Max & 2 & 4&Min$\rightarrow$&2\\
+\bottomrule
+\end{tabular}
+\caption{Minimax 2(a)}
+\end{table}
+So, the nash equilibrium is (`Down',`Left').
+
+\item%2(b)
 \begin{table}[H]
 \centering
 \begin{tabular}{@{}llll@{}}
 \toprule
-& & \multicolumn{2}{c}{\bfseries Column}\\
-& & left & right\\
-\multirow{2}{*}{\bfseries Row} & Up & 1 & 2\\
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right\\
+\multirow{2}{*}{\bfseries ROW} & Up & 1 & 2\\
  & Down & 4 & 3\\
 \bottomrule
 \end{tabular}
-\caption{Original Strategies}
+\caption{Strategies question 2(b)}
 \end{table}
 
 
@@ -89,9 +109,9 @@ Then, ROW player always select `Down' for better payoff than `Left' ($2>1$). So,
 \centering
 \begin{tabular}{@{}llll@{}}
 \toprule
-& & \multicolumn{2}{c}{\bfseries Column}\\
-& & left & right\\
-\multirow{2}{*}{\bfseries Row} & Up & 1,-1 & 2,-2\\
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right\\
+\multirow{2}{*}{\bfseries ROW} & Up & 1,-1 & 2,-2\\
  & Down & 4,-4 & 3,-3\\
 \bottomrule
 \end{tabular}
@@ -101,29 +121,218 @@ Then, ROW player always select `Down' for better payoff than `Left' ($2>1$). So,
 
 Table \ref{tab:completeb} shows that ROW player gets more payoff in `Down' move than `Up' move, no matter what is the COLUMN player's move. So, `Up' is a dominated strategy. So, we can eliminated this strategy.
 
-
-\begin{tabular}{@{}l|l|lll@{}}
-& & \multicolumn{3}{c}{\bfseries Column}\\
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llll@{}}
 \toprule
-& & left & Middle & right\\
-\hline
-\multirow{3}{*}{\bfseries Row} & Up & 5 & 3 & 2\\
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right\\
+{\bfseries ROW} & Down & 4,-4 & 3,-3\\
+\bottomrule
+\end{tabular}
+\caption{After elimination of row `Up'}
+\label{tab:completeb}
+\end{table}
+
+Then, `Left' is also dominated by `Right'.
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ccc@{}}
+\toprule
+& & {\bfseries COLUMN}\\
+& & Right\\
+{\bfseries ROW} & Down & 3,-3\\
+\bottomrule
+\end{tabular}
+\caption{After elimination of column `Left'}
+\label{tab:completeb}
+\end{table}
+
+So, (Down, Right) is nash equilibrium.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right && Min\\
+\multirow{4}{*}{\bfseries ROW} & Up & 1 & 2 &$\rightarrow$& 1\\
+ & Down & 4 & \cellcolor{gray}3 &$\rightarrow$& 3\\
+ & & $\downarrow$ & $\downarrow$ & & Max$\downarrow$\\
+ & Max & 4 & 3&Min$\rightarrow$&3\\
+\bottomrule
+\end{tabular}
+\caption{Minimax 2(b)}
+\end{table}
+
+So, (Down, Right) is nash equilibrium.
+
+\item%2(c)
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+& & \multicolumn{3}{c}{\bfseries COLUMN}\\
+& & Left & Middle & Right\\
+\multirow{3}{*}{\bfseries ROW} & Up & 5 & 3 & 2\\
  & Straight & 6 & 4 & 3\\
  & Down & 1 & 6 & 2\\
 \bottomrule
 \end{tabular}
-
-\begin{tabular}{@{}l|l|lll@{}}
-& & \multicolumn{3}{c}{\bfseries Column}\\
+\caption{Strategies of question 2(c)}
+\end{table}
+Equivalent strategeis
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ccccc@{}}
 \toprule
-& & left & Middle & right\\
-\hline
-\multirow{3}{*}{\bfseries Row} & Up & 5 & 3 & 1\\
+& & \multicolumn{3}{c}{\bfseries COLUMN}\\
+& & Left & Middle & Right\\
+\multirow{3}{*}{\bfseries ROW} & Up & 5,-5 & 3,-3 & 2,-2\\
+ & Straight & 6,-6 & 4,-4 & 3,-3\\
+ & Down & 1,-1 & 6,-6 & 2,-2\\
+\bottomrule
+\end{tabular}
+\caption{Strategies of question 2(c)}
+\end{table}
+
+Middle column is dominated by Right column, so we can eliminated `Middle' column.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cccc@{}}
+\toprule
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right\\
+\multirow{3}{*}{\bfseries ROW} & Up & 5,-5 & 2,-2\\
+ & Straight & 6,-6 & 3,-3\\
+ & Down & 1,-1 & 2,-2\\
+\bottomrule
+\end{tabular}
+\caption{After elimination of column Middle 2(c)}
+\end{table}
+
+Up and Down row are dominated by Straight. So, Up and Down also are eliminated.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cccc@{}}
+\toprule
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right\\
+{\bfseries ROW} & Straight & 6,-6 & 3,-3\\
+\bottomrule
+\end{tabular}
+\caption{After elimination of row Up and Down 2(c)}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ccc@{}}
+\toprule
+& &{\bfseries COLUMN}\\
+& & Right\\
+{\bfseries ROW} & Straight & 3,-3\\
+\bottomrule
+\end{tabular}
+\caption{After elimination of column Left 2(c)}
+\end{table}
+
+So, (Straight, Right) is nash equilibrium.
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+& & \multicolumn{3}{c}{\bfseries COLUMN}\\
+& & Left & Middle & Right && Min\\
+\multirow{5}{*}{\bfseries ROW} & Up & 5 & 3 & 2 & $\rightarrow$ & 2\\
+ & Straight & 6 & 4 & \cellcolor{gray}3 &$\rightarrow$ & 3\\
+ & Down & 1 & 6 & 2 & $\rightarrow$ & 1\\
+ & & $\downarrow$ & $\downarrow$ & $\downarrow$ && Max$\downarrow$\\
+ & Max & 6 & 6 & 3 & Min$\rightarrow$ & 3\\
+\bottomrule
+\end{tabular}
+\caption{Minimax 2(c)}
+\end{table}
+
+\item%2(d)
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+& & \multicolumn{3}{c}{\bfseries COLUMN}\\
+& & Left & Middle & Right\\
+\multirow{3}{*}{\bfseries ROW} & Up & 5 & 3 & 1\\
  & Straight & 6 & 1 & 2\\
  & Down & 1 & 0 & 0\\
 \bottomrule
 \end{tabular}
+\caption{Strategies of question 2(d)}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+& & \multicolumn{3}{c}{\bfseries COLUMN}\\
+& & Left & Middle & Right\\
+\multirow{3}{*}{\bfseries ROW} & Up & 5,-5 & 3,-3 & 1,-1\\
+ & Straight & 6,-6 & 1,-1 & 2,-2\\
+ & Down & 1,-1 & 0,0 & 0,0\\
+\bottomrule
+\end{tabular}
+\caption{Strategies of question 2(d)}
+\end{table}
 \end{enumerate}
+
+Left column is dominated by other two.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cccc@{}}
+\toprule
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Middle & Right\\
+\multirow{3}{*}{\bfseries ROW} & Up & 3,-3 & 1,-1\\
+ & Straight & 1,-1 & 2,-2\\
+ & Down & 0,0 & 0,0\\
+\bottomrule
+\end{tabular}
+\caption{After elimination of column Left 2(d)}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cccc@{}}
+\toprule
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Middle & Right\\
+\multirow{2}{*}{\bfseries ROW} & Up & 3,-3 & 1,-1\\
+ & Straight & 1,-1 & 2,-2\\
+\bottomrule
+\end{tabular}
+\caption{After elimination of row Down 2(d)}
+\end{table}
+
+There is no pure nash equilibrium.
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Middle & Right && Min\\
+\multirow{4}{*}{\bfseries ROW} & Up & 3 & 1 &$\rightarrow$&1\\
+ & Straight & 1 & 2&$\rightarrow$&1\\
+ & & $\downarrow$ & $\downarrow$ && Max$\downarrow$\\
+ & Max & 3 & 2 & Min$\rightarrow$ & 1,2\\
+\bottomrule
+\end{tabular}
+\caption{Minimax 2(d)}
+\end{table}
+
+Not solvable by minimax.
 
 \item%3
 \begin{enumerate}
@@ -131,25 +340,25 @@ Table \ref{tab:completeb} shows that ROW player gets more payoff in `Down' move 
 \begin{table}[H]
 \centering
 \begin{tabular}{@{}cccc@{}}
-& & \multicolumn{2}{c}{\bfseries Column}\\
 \toprule
-& & left & right\\
-\multirow{2}{*}{\bfseries Row} & Up & 3,1 & 4,2\\
+& & \multicolumn{2}{c}{\bfseries COLUMN}\\
+& & Left & Right\\
+\multirow{2}{*}{\bfseries ROW} & Up & 3,1 & 4,2\\
  & Down & 5,2 & 2,3\\
 \bottomrule
 \end{tabular}
 \caption{Strategies of question 3(a)}
 \end{table}
 
-If ROW player selects `Up' then COLUMN player select `Right' and if ROW player selects `Down' then COLUMN player selects `Right' also. So, we can eliminate 'left' column.
+If ROW player selects `Up' then COLUMN player select `Right' and if ROW player selects `Down' then COLUMN player selects `Right' also. So, we can eliminate 'Left' column.
 Then the strategies table looks as follows:
 
 \begin{table}[H]
 \centering
 \begin{tabular}{@{}cccc@{}}
+\toprule
 & & {\bfseries COLUMN}\\
 & & Right\\
-\toprule
 \multirow{2}{*}{\bfseries ROW} & Up & 4,2\\
  & Down & 2,3\\
 \bottomrule
@@ -178,7 +387,7 @@ So, this state ( `Up', `Right' ) is the Nash equilibrium state.
 \begin{tabular}{@{}cccc@{}}
 \toprule
 \multicolumn{2}{c}{} & \multicolumn{2}{c}{\bfseries COLUMN}\\
-\multicolumn{2}{c}{} & left & Right\\
+\multicolumn{2}{c}{} & Left & Right\\
 %\cline{3-4}
 \multirow{2}{*}{\bfseries ROW} & Up & 0,0 & 0,0\\
  & Down & 0,0 & 1,1\\
@@ -188,13 +397,13 @@ So, this state ( `Up', `Right' ) is the Nash equilibrium state.
 \end{table}
 
 \begin{description}
- \item [(`Up',`left')] Nither player change their move because thus they cannot increase their payoff.
+ \item [(`Up',`')] Nither player change their move because thus they cannot increase their payoff.
  \item [(`Up',`Right')] ROW player wants to take a move as `Down' instead of `Up' because thus it can get more payoff ( 1 ) than 0.
- \item [(`Down',`left')] COLUMN player wants to take a move as `Right' instead of `left' because thus it can get more payoff ( 1 ) than 0.
+ \item [(`Down',`Left')] COLUMN player wants to take a move as `Right' instead of `Left' because thus it can get more payoff ( 1 ) than 0.
  \item [(`Down',`Right')] Nither player change their move because thus they cannot increase their payoff.
  \end{description}
  
- So, the equilibrium states are (`Up',`left') and (`Down',`Right').
+ So, the equilibrium states are (`Up',`Left') and (`Down',`Right').
 \item
 \begin{table}[H]
 \centering
@@ -202,7 +411,7 @@ So, this state ( `Up', `Right' ) is the Nash equilibrium state.
 \toprule
 \multicolumn{2}{c}{} & \multicolumn{3}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & Left & Middle & Right\\
-\multirow{2}{*}{\bfseries ROW} & Up & 2,9 & 5,5 & 6,2\\
+\multirow{3}{*}{\bfseries ROW} & Up & 2,9 & 5,5 & 6,2\\
  & Straight & 6,4 & 9,2 & 5,3\\
  & Down & 4,3 & 2,7 & 7,1\\
  \bottomrule
@@ -225,7 +434,7 @@ If COLUMN player selects `Right' then ROW player selects `Up' and If ROW player 
 \toprule
 \multicolumn{2}{c}{} & \multicolumn{3}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & Left & Middle & Right\\
-\multirow{2}{*}{\bfseries ROW} & Up & 5,3 & 7,2 & 2,1\\
+\multirow{3}{*}{\bfseries ROW} & Up & 5,3 & 7,2 & 2,1\\
  & Straight & 1,2 & 6,3 & 1,4\\
  & Down & 4,2 & 6,4 & 3,5\\
  \bottomrule
@@ -249,7 +458,7 @@ If COLUMN player selects `Right' then ROW player selects `Down' and If ROW playe
 \toprule
 \multicolumn{2}{c}{} & \multicolumn{3}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & Left & Middle & Right\\
-\multirow{2}{*}{\bfseries ROW} & Up & 1,2 & 2,1 & 1,0\\
+\multirow{3}{*}{\bfseries ROW} & Up & 1,2 & 2,1 & 1,0\\
  & Straight & 0,5 & 1,2 & 7,4\\
  & Down & -1,1 & 3,0 & 5,2\\
  \bottomrule
@@ -272,7 +481,7 @@ We describe the equilibrium using the strategies of the players not merely by th
 \toprule
 \multicolumn{2}{c}{} & \multicolumn{4}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & w & x & y & z\\
-\multirow{2}{*}{\bfseries ROW} & A & 7,5 & -8,4 & 0,4 & 99,3\\
+\multirow{5}{*}{\bfseries ROW} & A & 7,5 & -8,4 & 0,4 & 99,3\\
  & B & 5,0 & 4,1 & 15,9 & 100,8\\
  & C & 6,0 & 5,8 & 15,9 & 10,2\\
  & D & 2,6 & 7,-10 & 3,9 & 10,8\\
@@ -288,7 +497,7 @@ We describe the equilibrium using the strategies of the players not merely by th
 \toprule
 \multicolumn{2}{c}{} & \multicolumn{3}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & w & x & y\\
-\multirow{2}{*}{\bfseries ROW} & A & 7,5 & -8,4 & 0,4\\
+\multirow{5}{*}{\bfseries ROW} & A & 7,5 & -8,4 & 0,4\\
  & B & 5,0 & 4,1 & 15,9\\
  & C & 6,0 & 5,8 & 15,9\\
  & D & 2,6 & 7,-10 & 3,9\\
@@ -382,7 +591,7 @@ P_1 &= 5.83\$
 \multicolumn{2}{c}{} & \multicolumn{2}{c}{\bfseries Bluebert}\\
 \multicolumn{2}{c}{} & \textbf{Goes Straight} & \textbf{Swerves}\\
 %\cline{3-4}
-\multirow{2}{*}{\bfseries Redbert,} & \textbf{Goes Straight} & -6,-6 & 2,-2\\
+\multirow{2}{*}{\bfseries Redbert} & \textbf{Goes Straight} & -6,-6 & 2,-2\\
  & \textbf{Swerves} & -2,2 & 0,0\\
 \bottomrule
 \end{tabular}
@@ -408,7 +617,7 @@ When both select `Goes Straight' then both are crushed. So, then negative payoff
 \multicolumn{2}{c}{} & \multicolumn{2}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & Goes Straight & Swerves & & Probability\\
 %\cline{3-4}
-\multirow{2}{*}{\bfseries ROW} & Goes Straight & -6,-6 & 2,-2 & $\rightarrow$ & $\alpha$\\
+\multirow{4}{*}{\bfseries ROW} & Goes Straight & -6,-6 & 2,-2 & $\rightarrow$ & $\alpha$\\
  & Swerves & -2,2 & 1,1 & $\rightarrow$ & $1-\alpha$\\
  & & $\downarrow$ & $\downarrow$ & \\
  & Probability & $\beta$ & $1-\beta$ &\\
@@ -513,10 +722,10 @@ As, this game is not zero-sum or constant sum game so this game is not solvable 
 
 Best responses
 \begin{itemize}
-\item If COLUMN selects `left' then ROW selects `Top' ($4>2$).
+\item If COLUMN selects `Left' then ROW selects `Top' ($4>2$).
 \item If ROW selects `Top' then COLUMN selects `Right' ($4>2$).
 \item If COLUMN selects `Right' then ROW selects `Bottom' ($6>2$).
-\item If COLUMN selects `Bottom' then ROW selects `left' ($4>0$).
+\item If COLUMN selects `Bottom' then ROW selects `Left' ($4>0$).
 \end{itemize}
 So, there is no nash equilibrium for pure strategy.
 
@@ -525,9 +734,9 @@ So, there is no nash equilibrium for pure strategy.
 \begin{tabular}{@{}cccccc@{}}
 \toprule
 \multicolumn{2}{c}{} & \multicolumn{2}{c}{\bfseries COLUMN}\\
-\multicolumn{2}{c}{} & left & Right & & Probability\\
+\multicolumn{2}{c}{} & Left & Right & & Probability\\
 %\cline{3-4}
-\multirow{2}{*}{\bfseries ROW} & Top & 4,2 & 0,4 & $\rightarrow$ & $\alpha$\\
+\multirow{4}{*}{\bfseries ROW} & Top & 4,2 & 0,4 & $\rightarrow$ & $\alpha$\\
  & Bottom & 2,4 & 6,0 & $\rightarrow$ & $1-\alpha$\\
  & & $\downarrow$ & $\downarrow$ & \\
  & Probability & $\beta$ & $1-\beta$ &\\
@@ -559,16 +768,16 @@ Dominance solvable games are those where the equilibrium outcome is the result o
 \centering
 \begin{tabular}{@{}cccccc@{}}
 \toprule
-\multicolumn{2}{c}{} & \multicolumn{2}{c}{\bfseries COLUMN}\\
+\multicolumn{2}{c}{} & \multicolumn{4}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & w & x & y & z\\
 %\cline{3-4}
-\multirow{2}{*}{\bfseries ROW} & A & 5,3 & -2,3 & 2,4 & 1,5\\
+\multirow{4}{*}{\bfseries ROW} & A & 5,3 & -2,3 & 2,4 & 1,5\\
  & B & 2,3 & -1,16 & 16,3 & 3,15\\
  & C & 4,5 & -10,16 & 19,5 & 0,7\\
  & D & 0,2 & 0,4 & 5,-7 & -1,6\\
  \bottomrule
 \end{tabular}
-\caption{Original Strategies Table}
+\caption{Strategies of question 11}
 \end{table}
 
 Elimination respect to COLUMN. COLUMN `w' is eliminated.
@@ -577,10 +786,10 @@ Elimination respect to COLUMN. COLUMN `w' is eliminated.
 \centering
 \begin{tabular}{@{}ccccc@{}}
 \toprule
-\multicolumn{2}{c}{} & \multicolumn{2}{c}{\bfseries COLUMN}\\
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & x & y & z\\
 %\cline{3-4}
-\multirow{2}{*}{\bfseries ROW} & A & -2,3 & 2,4 & 1,5\\
+\multirow{4}{*}{\bfseries ROW} & A & -2,3 & 2,4 & 1,5\\
  & B & -1,16 & 16,3 & 3,15\\
  & C & -10,16 & 19,5 & 0,7\\
  & D & 0,4 & 5,-7 & -1,6\\
@@ -595,10 +804,10 @@ Elimination respect to ROW. ROW \textbf{`A'} is eliminated.
 \centering
 \begin{tabular}{@{}ccccc@{}}
 \toprule
-\multicolumn{2}{c}{} & \multicolumn{2}{c}{\bfseries COLUMN}\\
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & x & y & z\\
 %\cline{3-4}
-\multirow{2}{*}{\bfseries ROW} & B & -1,16 & 16,3 & 3,15\\
+\multirow{3}{*}{\bfseries ROW} & B & -1,16 & 16,3 & 3,15\\
  & C & -10,16 & 19,5 & 0,7\\
  & D & 0,4 & 5,-7 & -1,6\\
  \bottomrule
@@ -615,7 +824,7 @@ Elimination respect to COLUMN. COLUMN \textbf{`y'} is eliminated.
 \multicolumn{2}{c}{} & \multicolumn{2}{c}{\bfseries COLUMN}\\
 \multicolumn{2}{c}{} & x & z\\
 %\cline{3-4}
-\multirow{2}{*}{\bfseries ROW} & B & -1,16 & 3,15\\
+\multirow{3}{*}{\bfseries ROW} & B & -1,16 & 3,15\\
  & C & -10,16 & 0,7\\
  & D & 0,4 & -1,6\\
  \bottomrule
