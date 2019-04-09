@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{forloop}
+\usepackage{polyglossia}
+\usepackage{booktabs,pdflscape,longtable,array}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage[legalpaper,left=0cm,right=0cm,top=0cm,bottom=0cm]{geometry}
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+\newcommand\MC[1]{\multicolumn{1}{l|}{\selectlanguage{bengali}#1}}
+\newcommand\zz{&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&}
+\newcommand{\aline}{\\\hline  &&\rule{0cm}{01cm}}
+\begin{document}
+\pagenumbering{gobble}
+\noindent
+\newcounter{theyflines}
+\begin{longtable}{|p{6cm}|p{2cm}|p{12cm}|}
+\hline
+ নাম &  রুম নং &  অর্ডার\\
+\forloop{theyflines}{1}{\value{theyflines} < 31}{\aline}\\
+\hline
+\end{longtable}
+\end{document}
