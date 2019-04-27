@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{forloop,pbox}
+\usepackage{polyglossia}
+\usepackage{booktabs}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage[a4paper,left=0.1cm,right=0.1cm,top=0cm,bottom=0.1cm]{geometry}
+\newcommand{\aline}{\\\hline \arabic{theyflines} &&&\rule{0cm}{0.8cm}}
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+\title{রমযানের জোড়, ২০১৯}
+\date{}
+\begin{document}
+\maketitle
+\begin{center}
+\end{center}
+\pagenumbering{gobble}
+\newcounter{theyflines}
+\noindent
+\bgroup
+\def\arraystretch{2.6}
+\begin{tabular}{@{}l|ll|p{15cm}}
+\toprule
+ &  নাম &  পরিমাণ & আপনি দিতে ইচ্ছুক (+ চিহ্ন দিয়ে শুধু পরিমাণ লিখুন, আর অপর পৃষ্টায় নাম লিখুন )\\
+\toprule
+\rownumber & পোলাও এর চাল(১০০টাকা/কেজি) & ১০০ কেজি &\\
+\hline
+\rownumber & \pbox{5cm}{গরুর গোস্ত(৫০০টাকা/কেজি)\\(সবার পর এইটা দেই)} & ১০০ কেজি &\\
+\hline
+\rownumber & তেল(১০০টাকা/কেজি) & ১৫ কেজি &\\
+\hline
+\rownumber & ঘি(৯০০টাকা/কেজি) & ২ কেজি &\\
+\hline
+\rownumber & দুধ(৯০ টাকা/কেজি) & ১ কেজি &\\
+\hline
+\rownumber & টক দই & ৫ কেজি & \\ 
+\hline
+\rownumber & আলু বোখারা & ২ কেজি &\\
+\hline
+\rownumber & কিসমিস & ২ কেজি &\\
+\hline
+\rownumber & পেঁয়াজ & ১০ কেজি &\\
+\hline
+\rownumber & আদা & ২ কেজি &\\
+\hline
+\rownumber & রসুন & ২ কেজি &\\
+\hline
+\rownumber & লবণ & ৫ কেজি &\\
+\hline
+\rownumber & কাঁচা মরিচ & ২ কেজি &\\
+\hline
+\rownumber & বিরিয়ানি মশলা(Shan) & ৪ প্যাকেট &\\
+\hline
+\rownumber & মশলা & ৩০০ টাকার & \\
+\hline
+\rownumber & জায়ফল যতি & ১০০ টাকা &\\
+\hline
+\rownumber & তেজপাতা & ১০০ গ্রাম & \\
+\bottomrule
+\end{tabular}
+\egroup
+\newpage
+\noindent
+\begin{tabular}{@{}p{0.25cm}|p{5.5cm}|p{1.5cm}|p{13cm}|}
+\toprule
+& নাম & রুম নং & আইটেমের নাম ও পরিমাণ
+\forloop{theyflines}{1}{\value{theyflines} < 31}{\aline}\\
+\toprule
+\end{tabular}
+\end{document}
