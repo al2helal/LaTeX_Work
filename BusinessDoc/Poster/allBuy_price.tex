@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage{multido,graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem,anyfontsize, multirow}
+\usepackage[a4paper,left=0cm,top=0.15cm,bottom=0cm,right=0cm]{geometry}
+\usepackage{polyglossia}
+%\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{english}
+\setotherlanguage{bengali}
+\newfontfamily\englishfont[Scale=2.4]{Linux Biolinum O}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\begin{document}
+\centering
+\selectlanguage{english}
+\multido{}{2}{
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\multicolumn{3}{c}{Date}\\
+\toprule
+Khalas & 250gm & 60tk\\
+Lulu & 250gm & 90tk\\
+Khenaizi & 500gm & 160tk\\
+Neghal & 800gm & 220tk\\
+Dabbas & 1kg & 280tk\\
+Lulu & 1kg & 295tk\\
+\toprule
+\multicolumn{3}{c}{Honey}\\
+\toprule
+Masterd (Shorisha) & 250gm & 160tk\\
+Licu & 250gm & 160tk\\
+Different Flower & 250gm & 250tk\\
+Black Seed (Kalojira) & 250gm & 300tk\\
+Shundorbon & 250gm & 375tk\\
+\bottomrule
+\end{tabular}\\
+\vspace{0.4cm}
+Md. Al-Helal ( CSE, MS )\\
+Dr. Muhammad Shahidullah Hall\\
+University of Dhaka\\
+\vspace{0.5cm}
+}
+\end{document}
