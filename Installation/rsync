@@ -1,0 +1,1 @@
+rsync -a --delete rsync://ctan.math.utah.edu/CTAN/systems/texlive/tlnet TeXLive  Size: 3.8GB #Packages: 3867 Server: USA Last Usage: 14.11.19
