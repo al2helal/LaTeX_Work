@@ -1,0 +1,29 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{forloop}
+\usepackage{polyglossia}
+\usepackage{booktabs}
+\usepackage{dingbat,multido}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage[a4paper, left=0.1cm, right=0.1cm, top=0.1cm, bottom=0.1cm]{geometry}
+\usepackage{array}
+\newcolumntype{M}[1]{>{\raggedright\arraybackslash}m{#1}}
+\newcommand{\aline}{\\\hline \arabic{theyflines} & ভাই মোঃ &&&&&}
+\renewcommand{\arraystretch}{1.78}
+\begin{document}
+\begin{center}
+\selectlanguage{bengali}
+যেসব সাথী বিভিন্ন সময়ে ইজতেমায় যাওয়ার নিয়ত করেছে তাদের তালিকা এবং সময় । ওই সময়ে যেতে ইচ্ছুক জিম্মাদার সাথীর সাথে জুড়ে দিলে ভাল হয় ।
+\end{center}
+\pagenumbering{gobble}
+\newcounter{theyflines}
+\noindent
+\begin{tabular}{|M{0.4cm}|M{5.4cm}|M{1.5cm}|M{1.8cm}|M{4.2cm}|M{2.5cm}|M{2cm}|}
+\hline
+নং &  নাম &  রুম নং & বিল্ডিং  & মোবাইল নং & বার & সময়
+\forloop{theyflines}{1}{\value{theyflines} < 31}{\aline}\\
+\hline
+\end{tabular}
+\end{document}
