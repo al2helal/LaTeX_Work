@@ -1,0 +1,64 @@
+%text taken from Mawlana Murshidul Islam, Jamia Arabia Haji Unus(Kawmi Madrasha)
+% ornamented and decorated by Md.Al-Helal
+\documentclass[12pt]{article}
+\usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+\usepackage{fontspec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[object=vectorian]{pgfornament} % also loads tikz
+\setmainfont{Holden}
+\tikzset{pgfornamentstyle/.style={draw = Periwinkle,
+                                  fill = SpringGreen}}
+
+\usetikzlibrary{
+  positioning, % for left=of, above=of etc.
+  calc % for let syntax used in second example
+}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}[
+  every node/.append style={inner sep=0},
+  node distance=5mm
+]
+   \node [Black] (text){Vaijan's Honey};
+
+
+
+  \path
+    let
+    \p1=(text.south west),
+    \p2=(text.north east),
+    \n1={\x2-\x1}, % width of text node
+    \n2={\y2-\y1}  % height of text node
+    in
+% in all of the below some fraction of \n1 or \n2 is used to define the width of the ornaments
+% set width of these ornaments to half the text node's width
+   node [anchor=north] (below) at (text.south) {\pgfornament[width=0.5*\n1,symmetry=c]{69}}
+   node [anchor=south] (above) at (text.north) {\pgfornament[width=0.5*\n1]{69}}
+
+   node [anchor=south] (bellowaddress1) at (below.south) {\pgfornament[width=0.5*\n1]{88}}
+   node [Maroon, anchor=south] (text1) at (bellowaddress1.south) {Md.Al-Helal}
+   node [anchor=south] (bellowaddress2) at (below.south) {\pgfornament[width=0.5*\n1]{88}}
+
+
+% use \n2 for ornament width here
+   node [rotate=-90, left=of text, anchor=north] (left)  {\pgfornament[width=\n2]{46}}
+   node [rotate=90, right=of text, anchor=north] (right) {\pgfornament[width=\n2]{46}}
+% and \n1 here
+   node [above=of above] (top)    {\pgfornament[width=\n1]{71}}
+   node [below=of below] (bottom) {\pgfornament[width=\n1,symmetry=h]{71}}
+%   node [anchor=north] (top) at (text.north)   {\pgfornament[width=\n1]{71}}
+%   node [anchor=south] (bottom) at (text.south) {\pgfornament[width=\n1,symmetry=h]{71}}
+% and 25% of width for the corner ornaments
+   node [anchor=north west] at (top.north -| left.south)  {\pgfornament[width=0.25*\n1]{63}}
+   node [anchor=north east] at (top.north -| right.south) {\pgfornament[width=0.25*\n1,symmetry=v]{63}}
+   node [anchor=south west] at (bottom.south -| left.south) {\pgfornament[width=0.25*\n1,symmetry=h]{63}}
+   node [anchor=south east] at (bottom.south -| right.south) {\pgfornament[width=0.25*\n1,symmetry=c]{63}}; % <- note the \path doesn't end until here
+
+   % draw frame
+  \draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
+
+\end{tikzpicture}
+\end{center}
+\end{document}
