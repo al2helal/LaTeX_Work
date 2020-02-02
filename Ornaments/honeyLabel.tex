@@ -37,9 +37,6 @@
    node [anchor=north] (below) at (text.south) {\pgfornament[width=0.5*\n1,symmetry=c]{69}}
    node [anchor=south] (above) at (text.north) {\pgfornament[width=0.5*\n1]{69}}
 
-   node [anchor=south] (bellowaddress1) at (below.south) {\pgfornament[width=0.5*\n1]{88}}
-   node [Maroon, anchor=south] (text1) at (bellowaddress1.south) {Md.Al-Helal}
-   node [anchor=south] (bellowaddress2) at (below.south) {\pgfornament[width=0.5*\n1]{88}}
 
 
 % use \n2 for ornament width here
@@ -58,7 +55,13 @@
 
    % draw frame
   \draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
-
+  
+  \vspace{2cm};
+  \node [anchor=south] (bellowaddress1) at (below.south) {\pgfornament[width=0.10*\textwidth]{88}};
+  \setmainfont{Linux Biolinum O}
+  \tiny
+  \node [Brown, below, align=center] (bellowaddress3) at (bellowaddress1.south) {Md.Al-Helal, CSE, DU\\ 01515611989};
+  \node [anchor=south, below] (bellowaddress2) at (bellowaddress3.south) {\pgfornament[width=0.10*\textwidth]{88}};
 \end{tikzpicture}
 \end{center}
 \end{document}
