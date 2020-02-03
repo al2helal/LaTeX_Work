@@ -1,10 +1,10 @@
-%text taken from Mawlana Murshidul Islam, Jamia Arabia Haji Unus(Kawmi Madrasha)
-% ornamented and decorated by Md.Al-Helal
 \documentclass[12pt]{article}
 \usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
 \usepackage{fontspec}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[object=vectorian]{pgfornament} % also loads tikz
+\usepackage{labels}
+
 \setmainfont{Holden}
 \tikzset{pgfornamentstyle/.style={draw = Periwinkle,
                                   fill = SpringGreen}}
@@ -13,15 +13,24 @@
   positioning, % for left=of, above=of etc.
   calc % for let syntax used in second example
 }
-
+\LabelCols=4%         Number of columns of labels per page
+\LabelRows=7%         Number of rows of labels per page
+\LeftBorder=2mm%      Space added to left border of each label
+\RightBorder=2mm%     Space added to right border of each label
+\TopBorder=9mm%       Space to leave at top of sheet
+\BottomBorder=2mm%    Space to leave at bottom of sheet
+\numberoflabels=28
 \begin{document}
+% 
+% \begin{center}
 
-\begin{center}
+    \newsavebox{\orn}
+    \savebox{\orn}{
 \begin{tikzpicture}[
   every node/.append style={inner sep=0},
   node distance=5mm
 ]
-   \node [Black] (text){Vaijan's Honey};
+\node [Black] (text) {Vaijan\XeTeXglyph83s Honey};
 
 
 
@@ -43,7 +52,7 @@
    node [rotate=-90, left=of text, anchor=north] (left)  {\pgfornament[width=\n2]{46}}
    node [rotate=90, right=of text, anchor=north] (right) {\pgfornament[width=\n2]{46}}
 % and \n1 here
-   node [above=of above] (top)    {\pgfornament[width=\n1]{71}}
+   node [above=0mm of above] (top)    {\pgfornament[width=\n1]{71}}
    node [below=of below] (bottom) {\pgfornament[width=\n1,symmetry=h]{71}}
 %   node [anchor=north] (top) at (text.north)   {\pgfornament[width=\n1]{71}}
 %   node [anchor=south] (bottom) at (text.south) {\pgfornament[width=\n1,symmetry=h]{71}}
@@ -55,7 +64,6 @@
 
    % draw frame
   \draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
-  
   \vspace{2cm};
   \node [anchor=south] (bellowaddress1) at (below.south) {\pgfornament[width=0.10*\textwidth]{88}};
   \setmainfont{Linux Biolinum O}
@@ -63,5 +71,9 @@
   \node [Brown, below, align=center] (bellowaddress3) at (bellowaddress1.south) {Md.Al-Helal, CSE, DU\\ 01515611989};
   \node [anchor=south, below] (bellowaddress2) at (bellowaddress3.south) {\pgfornament[width=0.10*\textwidth]{88}};
 \end{tikzpicture}
-\end{center}
+    }
+    \begin{labels}
+    \usebox{\orn}
+% \end{center}
+\end{labels}
 \end{document}
