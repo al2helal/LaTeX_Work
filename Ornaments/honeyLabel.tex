@@ -13,13 +13,13 @@
   positioning, % for left=of, above=of etc.
   calc % for let syntax used in second example
 }
-\LabelCols=4%         Number of columns of labels per page
-\LabelRows=7%         Number of rows of labels per page
+\LabelCols=2%         Number of columns of labels per page
+\LabelRows=3%         Number of rows of labels per page
 \LeftBorder=2mm%      Space added to left border of each label
 \RightBorder=2mm%     Space added to right border of each label
-\TopBorder=9mm%       Space to leave at top of sheet
+\TopBorder=2mm%       Space to leave at top of sheet
 \BottomBorder=2mm%    Space to leave at bottom of sheet
-\numberoflabels=28
+\numberoflabels=6
 \begin{document}
 % 
 % \begin{center}
@@ -30,6 +30,7 @@
   every node/.append style={inner sep=0},
   node distance=5mm
 ]
+font=\Huge
 \node [Black] (text) {Vaijan\XeTeXglyph83s Honey};
 
 
@@ -43,33 +44,32 @@
     in
 % in all of the below some fraction of \n1 or \n2 is used to define the width of the ornaments
 % set width of these ornaments to half the text node's width
-   node [anchor=north] (below) at (text.south) {\pgfornament[width=0.5*\n1,symmetry=c]{69}}
-   node [anchor=south] (above) at (text.north) {\pgfornament[width=0.5*\n1]{69}}
+   node [anchor=north] (below) at (text.south) {\pgfornament[width=4.5cm,symmetry=c]{69}}
+   node [anchor=south] (above) at (text.north) {\pgfornament[width=4.5cm]{69}}
 
 
 
 % use \n2 for ornament width here
-   node [rotate=-90, left=of text, anchor=north] (left)  {\pgfornament[width=\n2]{46}}
-   node [rotate=90, right=of text, anchor=north] (right) {\pgfornament[width=\n2]{46}}
+   node [rotate=-90, left=13mm of text, anchor=north] (left)  {\pgfornament[width=\n2]{46}}
+   node [rotate=90, right=13mm of text, anchor=north] (right) {\pgfornament[width=\n2]{46}}
 % and \n1 here
-   node [above=0mm of above] (top)    {\pgfornament[width=\n1]{71}}
-   node [below=of below] (bottom) {\pgfornament[width=\n1,symmetry=h]{71}}
+   node [above=1mm of above] (top)    {\pgfornament[width=6cm]{71}}
 %   node [anchor=north] (top) at (text.north)   {\pgfornament[width=\n1]{71}}
 %   node [anchor=south] (bottom) at (text.south) {\pgfornament[width=\n1,symmetry=h]{71}}
 % and 25% of width for the corner ornaments
-   node [anchor=north west] at (top.north -| left.south)  {\pgfornament[width=0.25*\n1]{63}}
-   node [anchor=north east] at (top.north -| right.south) {\pgfornament[width=0.25*\n1,symmetry=v]{63}}
-   node [anchor=south west] at (bottom.south -| left.south) {\pgfornament[width=0.25*\n1,symmetry=h]{63}}
-   node [anchor=south east] at (bottom.south -| right.south) {\pgfornament[width=0.25*\n1,symmetry=c]{63}}; % <- note the \path doesn't end until here
-
+   node [anchor=north west] at (top.north -| left.south)  {\pgfornament[width=2cm]{63}}
+   node [anchor=north east] at (top.north -| right.south) {\pgfornament[width=2cm,symmetry=v]{63}};
    % draw frame
-  \draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
   \vspace{2cm};
-  \node [anchor=south] (bellowaddress1) at (below.south) {\pgfornament[width=0.10*\textwidth]{88}};
+  \node [anchor=south, below=1mm of below] (addressLineUp) at (below.south) {\pgfornament[width=3.5cm]{88}};
   \setmainfont{Linux Biolinum O}
-  \tiny
-  \node [Brown, below, align=center] (bellowaddress3) at (bellowaddress1.south) {Md.Al-Helal, CSE, DU\\ 01515611989};
-  \node [anchor=south, below] (bellowaddress2) at (bellowaddress3.south) {\pgfornament[width=0.10*\textwidth]{88}};
+  font=\normalsize
+  \node [Brown, below, align=center] (address) at (addressLineUp.south) {Md.Al-Helal, CSE, DU\\ 01515611989};
+  \node [anchor=south, below=1mm of address] (addressLineDown) at (address.south) {\pgfornament[width=3.5cm]{88}};
+  \node [below=of addressLineDown] (bottom) {\pgfornament[width=6cm,symmetry=h]{71}};
+  \node [anchor=south west] at (bottom.south -| left.south) {\pgfornament[width=2cm,symmetry=h]{63}};
+\node [anchor=south east] at (bottom.south -| right.south) {\pgfornament[width=2cm,symmetry=c]{63}}; % <- note the \path doesn't end until here
+\draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
 \end{tikzpicture}
     }
     \begin{labels}
