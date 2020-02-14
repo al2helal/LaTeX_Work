@@ -3,7 +3,7 @@
 \usepackage{fontspec}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[object=vectorian]{pgfornament} % also loads tikz
-\usepackage{labels}
+\usepackage{labels, fontawesome}
 
 \setmainfont{Holden}
 \tikzset{pgfornamentstyle/.style={draw = Periwinkle,
@@ -64,7 +64,7 @@ font=\Huge
   \node [anchor=south, below=1mm of below] (addressLineUp) at (below.south) {\pgfornament[width=3.5cm]{88}};
   \setmainfont{Linux Biolinum O}
   font=\normalsize
-  \node [Brown, below, align=center] (address) at (addressLineUp.south) {Md.Al-Helal, CSE, DU\\ 01515611989};
+  \node [Brown, below, align=center] (address) at (addressLineUp.south) {Md.Al-Helal, CSE, DU\\ 01515611989\\\faFacebookSquare{}Honey\&Date};
   \node [anchor=south, below=1mm of address] (addressLineDown) at (address.south) {\pgfornament[width=3.5cm]{88}};
   \node [below=of addressLineDown] (bottom) {\pgfornament[width=6cm,symmetry=h]{71}};
   \node [anchor=south west] at (bottom.south -| left.south) {\pgfornament[width=2cm,symmetry=h]{63}};
