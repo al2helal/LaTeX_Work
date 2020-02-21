@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+
+
+
+\usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+% \usepackage[paperwidth=15cm, paperheight=6cm, left=0cm,right=0cm,top=0cm,bottom=0cm]{geometry}
+\usepackage{fontspec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[object=vectorian]{pgfornament} % also loads tikz
+\usepackage{labels, fontawesome, adjustbox}
+
+\setmainfont{Holden}
+\tikzset{pgfornamentstyle/.style={draw = Periwinkle,
+                                  fill = SpringGreen}}
+
+\usetikzlibrary{%
+  positioning, % for left=of, above=of etc.
+  calc % for let syntax used in second example
+}
+\LabelCols=1%         Number of columns of labels per page
+\LabelRows=1%         Number of rows of labels per page
+\LeftBorder=2mm%      Space added to left border of each label
+\RightBorder=2mm%     Space added to right border of each label
+\TopBorder=2mm%       Space to leave at top of sheet
+\BottomBorder=2mm%    Space to leave at bottom of sheet
+\numberoflabels=1
+\begin{document}
+
+
+% \special{papersize=15cm,6cm}
+% 
+% \begin{center}
+    \newsavebox{\orn}
+    \savebox{\orn}{%
+    \adjustbox{frame}{%
+      \resizebox{15cm}{6cm}{%
+\begin{tikzpicture}[
+  every node/.append style={inner sep=0},
+  node distance=5mm
+]
+font=\huge
+\node [Black] (text) {Vaijan\XeTeXglyph83s Honey};
+% in all of the below some fraction of \n1 or \n2 is used to define the width of the ornaments
+% set width of these ornaments to half the text node's width
+   \node [below= 1mm of text] (below) {\pgfornament[width=2.5cm,symmetry=c]{69}};
+   \node [above = 1mm of text] (above) {\pgfornament[width=2.5cm]{69}};
+
+
+
+% % use \n2 for ornament width here
+   \node [rotate=-90, below left=5mm and 2mm of text, anchor=north] (left)  {\pgfornament[width=3cm]{46}}; %M left
+   \node [rotate=90, below right=5mm and 2mm of text, anchor=north] (right) {\pgfornament[width=3cm]{46}}; %N right
+% % and \n1 here
+   \node [above=1mm of above] (top)    {\pgfornament[width=5cm]{71}};%top H
+  % 
+% %   node [anchor=south] (bottom) at (text.south) {\pgfornament[width=\n1,symmetry=h]{71}}
+% % and 25% of width for the corner ornaments
+   \node [anchor=north west] at (top.north -| left.south)  {\pgfornament[width=2cm]{63}}; %top left
+   \node [anchor=north east] at (top.north -| right.south) {\pgfornament[width=2cm,symmetry=v]{63}}; %top right
+%    % draw frame
+%   \vspace{2cm};
+  \node [below=1mm of below] (addressLineUp) at (below.south) {\pgfornament[width=3.5cm]{88}};
+  \setmainfont{Linux Biolinum O}
+  font=\normalsize
+  \node [Brown, below=1mm of addressLineUp, align=center] (address) {Md.Al-Helal, CSE, DU\\ 01515611989\\\faFacebookSquare{}Honey\&Date};
+  \node [below=1mm of address] (addressLineDown) {\pgfornament[width=3.5cm]{88}};
+  \node [below=1mm of addressLineDown] (bottom) {\pgfornament[width=5cm]{71}};%G
+%   \node [below=of addressLineDown] (bottom) {\pgfornament[width=6cm,symmetry=h]{71}};
+  \node [anchor=south west] at (bottom.south -| left.south) {\pgfornament[width=2cm,symmetry=h]{63}}; %bottom left
+\node [anchor=south east] at (bottom.south -| right.south) {\pgfornament[width=2cm,symmetry=c]{63}}; % bottom right
+% right box
+\node[anchor=west, rotate=-90, right=1cm of right] (rightBoxLeft) {\pgfornament[width=3cm]{46}};%rightbox left
+% \node[anchor=west, right=0.5cm of rightBoxLeft] (rightBoxText) {Hhhhhhhhhhhh};
+\node[anchor=west, rotate=90, right=8cm of rightBoxLeft] (rightBoxRight) {\pgfornament[width=3cm]{46}};% rightbox right
+\node [right=4cm of top] (rightBoxTop) {\pgfornament[width=5cm]{71}};%top H
+\node [right=4cm of bottom] (rightBoxBottom) {\pgfornament[width=5cm]{71}};%top H
+\node [anchor=north west] at (rightBoxTop.north -| rightBoxLeft.south)  {\pgfornament[width=2cm]{63}}; %top left
+\node [anchor=north east] at (rightBoxTop.north -| rightBoxRight.south) {\pgfornament[width=2cm,symmetry=v]{63}}; %top right
+%    % draw frame
+\node [anchor=south west] at (rightBoxBottom.south -| rightBoxLeft.south) {\pgfornament[width=2cm,symmetry=h]{63}}; %bottom left
+\node [anchor=south east] at (rightBoxBottom.south -| rightBoxRight.south) {\pgfornament[width=2cm,symmetry=c]{63}}; % bottom right
+% \fill [red] (0, 10) rectangle (-5, 15);
+
+% \draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
+\end{tikzpicture}
+      }
+}
+    }
+    \begin{labels}
+    \usebox{\orn}
+% \end{center}
+\end{labels}
+\end{document}
