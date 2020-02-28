@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt, landscape]{article}
 
 
 
@@ -10,24 +10,28 @@
 \usepackage[object=vectorian]{pgfornament} % also loads tikz
 \usepackage{labels, fontawesome, adjustbox}
 
-\setmainfont{Holden}
-\tikzset{pgfornamentstyle/.style={draw = Periwinkle,
-                                  fill = SpringGreen}}
 
+\definecolor{goldenyellow}{rgb}{1.0, 0.87, 0.0}
+\definecolor{stildegrainyellow}{rgb}{0.98, 0.85, 0.37}
+\setmainfont{Holden}
+% \tikzset{pgfornamentstyle/.style={draw = Periwinkle, fill = SpringGreen}}
+\tikzset{pgfornamentstyle/.style={draw = Goldenrod, fill = Goldenrod}}
+\tikzset{pgfornamentstyle/.style={draw = stildegrainyellow, fill = stildegrainyellow}}
+% \tikzset{pgfornamentstyle/.style={draw = Goldenrod, fill = Goldenrod}}
+% \tikzset{pgfornamentstyle/.style={draw = Goldenrod, fill = Black}}
 \usetikzlibrary{%
   positioning, % for left=of, above=of etc.
   calc % for let syntax used in second example
 }
 \LabelCols=1%         Number of columns of labels per page
-\LabelRows=1%         Number of rows of labels per page
+\LabelRows=3%         Number of rows of labels per page
 \LeftBorder=2mm%      Space added to left border of each label
 \RightBorder=2mm%     Space added to right border of each label
 \TopBorder=2mm%       Space to leave at top of sheet
 \BottomBorder=2mm%    Space to leave at bottom of sheet
-\numberoflabels=1
+\numberoflabels=3
 \begin{document}
-
-
+\pagecolor{gray}
 % \special{papersize=15cm,6cm}
 % 
 % \begin{center}
@@ -43,16 +47,13 @@ font=\huge
 \node [Black] (text) {Vaijan\XeTeXglyph83s Honey};
 % in all of the below some fraction of \n1 or \n2 is used to define the width of the ornaments
 % set width of these ornaments to half the text node's width
-   \node [below= 1mm of text] (below) {\pgfornament[width=2.5cm,symmetry=c]{69}};
-   \node [above = 1mm of text] (above) {\pgfornament[width=2.5cm]{69}};
-
-
-
+   \node [below= 1mm of text] (below) {\pgfornament[width=4cm,symmetry=c]{69}};
+   \node [above = 1mm of text] (above) {\pgfornament[width=4cm]{69}};
 % % use \n2 for ornament width here
-   \node [rotate=-90, below left=5mm and 2mm of text, anchor=north] (left)  {\pgfornament[width=3cm]{46}}; %M left
-   \node [rotate=90, below right=5mm and 2mm of text, anchor=north] (right) {\pgfornament[width=3cm]{46}}; %N right
+   \node [rotate=-90, left=0mm of text, anchor=north] (left)  {\pgfornament[width=5cm]{46}}; %M left
+   \node [rotate=90, right=0mm of text, anchor=north] (right) {\pgfornament[width=5cm]{46}}; %N right
 % % and \n1 here
-   \node [above=1mm of above] (top)    {\pgfornament[width=5cm]{71}};%top H
+   \node [above=1cm of above] (top)    {\pgfornament[width=5cm]{71}};%top H
   % 
 % %   node [anchor=south] (bottom) at (text.south) {\pgfornament[width=\n1,symmetry=h]{71}}
 % % and 25% of width for the corner ornaments
@@ -60,20 +61,20 @@ font=\huge
    \node [anchor=north east] at (top.north -| right.south) {\pgfornament[width=2cm,symmetry=v]{63}}; %top right
 %    % draw frame
 %   \vspace{2cm};
-  \node [below=1mm of below] (addressLineUp) at (below.south) {\pgfornament[width=3.5cm]{88}};
-  \setmainfont{Linux Biolinum O}
-  font=\normalsize
-  \node [Brown, below=1mm of addressLineUp, align=center] (address) {Md.Al-Helal, CSE, DU\\ 01515611989\\\faFacebookSquare{}Honey\&Date};
-  \node [below=1mm of address] (addressLineDown) {\pgfornament[width=3.5cm]{88}};
-  \node [below=1mm of addressLineDown] (bottom) {\pgfornament[width=5cm]{71}};%G
+  \node [below=1cm of below] (bottom) {\pgfornament[width=5cm]{71}};%G
 %   \node [below=of addressLineDown] (bottom) {\pgfornament[width=6cm,symmetry=h]{71}};
   \node [anchor=south west] at (bottom.south -| left.south) {\pgfornament[width=2cm,symmetry=h]{63}}; %bottom left
 \node [anchor=south east] at (bottom.south -| right.south) {\pgfornament[width=2cm,symmetry=c]{63}}; % bottom right
 % right box
-\node[anchor=west, rotate=-90, right=1cm of right] (rightBoxLeft) {\pgfornament[width=3cm]{46}};%rightbox left
+\node[anchor=west, rotate=-90, right=1cm of right] (rightBoxLeft) {\pgfornament[width=5cm]{46}};%rightbox left
 % \node[anchor=west, right=0.5cm of rightBoxLeft] (rightBoxText) {Hhhhhhhhhhhh};
-\node[anchor=west, rotate=90, right=8cm of rightBoxLeft] (rightBoxRight) {\pgfornament[width=3cm]{46}};% rightbox right
 \node [right=4cm of top] (rightBoxTop) {\pgfornament[width=5cm]{71}};%top H
+\setmainfont{Linux Biolinum O}
+  font=\normalsize
+  % \node [below=1mm of below] (addressLineUp) at (below.south) {\pgfornament[width=3.5cm]{88}};
+  % \node [below=1mm of address] (addressLineDown) {\pgfornament[width=3.5cm]{88}};
+  \node [Brown, below=of rightBoxTop, align=center] (address) {Flower: Lici\\Origin: Naraongong\\Weight: 250gm\\Price: 160 TK\\\\Md.Al-Helal\\Computer Science \& Engineering\\Dr. Muhammad Shahidullah Hall\\University of Dhaka\\ 01515611989\\\faFacebookSquare{ }Honey\&Date};
+\node[anchor=west, rotate=90, right=8cm of rightBoxLeft] (rightBoxRight) {\pgfornament[width=5cm]{46}};% rightbox right
 \node [right=4cm of bottom] (rightBoxBottom) {\pgfornament[width=5cm]{71}};%top H
 \node [anchor=north west] at (rightBoxTop.north -| rightBoxLeft.south)  {\pgfornament[width=2cm]{63}}; %top left
 \node [anchor=north east] at (rightBoxTop.north -| rightBoxRight.south) {\pgfornament[width=2cm,symmetry=v]{63}}; %top right
@@ -81,14 +82,9 @@ font=\huge
 \node [anchor=south west] at (rightBoxBottom.south -| rightBoxLeft.south) {\pgfornament[width=2cm,symmetry=h]{63}}; %bottom left
 \node [anchor=south east] at (rightBoxBottom.south -| rightBoxRight.south) {\pgfornament[width=2cm,symmetry=c]{63}}; % bottom right
 % \fill [red] (0, 10) rectangle (-5, 15);
-
-% \draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
-\end{tikzpicture}
-      }
-}
-    }
-    \begin{labels}
-    \usebox{\orn}
-% \end{center}
+\draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
+\end{tikzpicture}}}}
+\begin{labels}
+  \usebox{\orn}
 \end{labels}
 \end{document}
