@@ -11,12 +11,13 @@
 \usepackage{labels, fontawesome, adjustbox}
 
 
-\definecolor{goldenyellow}{rgb}{1.0, 0.87, 0.0}
-\definecolor{stildegrainyellow}{rgb}{0.98, 0.85, 0.37}
+\definecolor{infoColor}{HTML}{f7ef9d}
+\definecolor{borderColor}{HTML}{fafaf4}
+\definecolor{brandColor}{HTML}{e89324}
 \setmainfont{Holden}
 % \tikzset{pgfornamentstyle/.style={draw = Periwinkle, fill = SpringGreen}}
-\tikzset{pgfornamentstyle/.style={draw = Goldenrod, fill = Goldenrod}}
-\tikzset{pgfornamentstyle/.style={draw = stildegrainyellow, fill = stildegrainyellow}}
+% \tikzset{pgfornamentstyle/.style={draw = Goldenrod, fill = Goldenrod}}
+\tikzset{pgfornamentstyle/.style={draw = Black, fill = Black}}
 % \tikzset{pgfornamentstyle/.style={draw = Goldenrod, fill = Goldenrod}}
 % \tikzset{pgfornamentstyle/.style={draw = Goldenrod, fill = Black}}
 \usetikzlibrary{%
@@ -31,20 +32,20 @@
 \BottomBorder=2mm%    Space to leave at bottom of sheet
 \numberoflabels=3
 \begin{document}
-\pagecolor{gray}
+\pagecolor[HTML]{7f440b}
 % \special{papersize=15cm,6cm}
 % 
 % \begin{center}
     \newsavebox{\orn}
     \savebox{\orn}{%
     \adjustbox{frame}{%
-      \resizebox{15cm}{6cm}{%
+      \resizebox{15cm}{6.5cm}{%
 \begin{tikzpicture}[
   every node/.append style={inner sep=0},
   node distance=5mm
 ]
 font=\huge
-\node [Black] (text) {Vaijan\XeTeXglyph83s Honey};
+\node [brandColor] (text) {Vaijan\XeTeXglyph83s Honey};
 % in all of the below some fraction of \n1 or \n2 is used to define the width of the ornaments
 % set width of these ornaments to half the text node's width
    \node [below= 1mm of text] (below) {\pgfornament[width=4cm,symmetry=c]{69}};
@@ -73,7 +74,7 @@ font=\huge
   font=\normalsize
   % \node [below=1mm of below] (addressLineUp) at (below.south) {\pgfornament[width=3.5cm]{88}};
   % \node [below=1mm of address] (addressLineDown) {\pgfornament[width=3.5cm]{88}};
-  \node [Brown, below=of rightBoxTop, align=center] (address) {Flower: Lici\\Origin: Naraongong\\Weight: 250gm\\Price: 160 TK\\\\Md.Al-Helal\\Computer Science \& Engineering\\Dr. Muhammad Shahidullah Hall\\University of Dhaka\\ 01515611989\\\faFacebookSquare{ }Honey\&Date};
+  \node [infoColor, below=of rightBoxTop, align=center] (address) {Flower: Lici\\Origin: Naraongong\\Weight: 250gm\\Price: 160 TK\\\\Md.Al-Helal\\Computer Science \& Engineering\\Dr. Muhammad Shahidullah Hall\\University of Dhaka\\ 01515611989\\\faFacebookSquare{ }Honey\&Date};
 \node[anchor=west, rotate=90, right=8cm of rightBoxLeft] (rightBoxRight) {\pgfornament[width=5cm]{46}};% rightbox right
 \node [right=4cm of bottom] (rightBoxBottom) {\pgfornament[width=5cm]{71}};%top H
 \node [anchor=north west] at (rightBoxTop.north -| rightBoxLeft.south)  {\pgfornament[width=2cm]{63}}; %top left
@@ -82,7 +83,7 @@ font=\huge
 \node [anchor=south west] at (rightBoxBottom.south -| rightBoxLeft.south) {\pgfornament[width=2cm,symmetry=h]{63}}; %bottom left
 \node [anchor=south east] at (rightBoxBottom.south -| rightBoxRight.south) {\pgfornament[width=2cm,symmetry=c]{63}}; % bottom right
 % \fill [red] (0, 10) rectangle (-5, 15);
-\draw [Blue] (current bounding box.south west) rectangle (current bounding box.north east);
+\draw [borderColor] (current bounding box.south west) rectangle (current bounding box.north east);
 \end{tikzpicture}}}}
 \begin{labels}
   \usebox{\orn}
