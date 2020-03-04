@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{forloop}
+\usepackage{polyglossia}
+\usepackage{booktabs}
+\usepackage{dingbat, multido, array}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage[a4paper, left=0.1cm, right=0cm, top=0.1cm, bottom=0.1cm]{geometry}
+\newcommand{\aline}{\\\hline \arabic{theyflines} & ভাই মোঃ &&\rule[-0.25cm]{0cm}{0.8cm}}
+\begin{document}
+\selectlanguage{bengali}
+\pagenumbering{gobble}
+\newcounter{theyflines}
+\multido{}{2}
+{
+\noindent
+\begin{minipage}{0.45\textwidth}
+\begin{tabular}{|p{0.20cm}|p{5cm}|p{1.7cm}|p{1.5cm}|}
+\hline
+নং & নাম & রুম নং & নিয়ত
+\forloop{theyflines}{1}{\value{theyflines} < 36}{\aline}\\
+\hline
+\end{tabular}
+\end{minipage}
+\hspace{1cm}
+}
+\end{document}
