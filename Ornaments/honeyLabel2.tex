@@ -8,7 +8,7 @@
 \usepackage{fontspec}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[object=vectorian]{pgfornament} % also loads tikz
-\usepackage{labels, fontawesome, adjustbox}
+\usepackage{labels, fontawesome, adjustbox, tikz}
 
 %design 1
 % \definecolor{infoColor}{HTML}{f7ef9d}
@@ -98,7 +98,13 @@ font=\huge
   font=\normalsize
   % \node [below=1mm of below] (addressLineUp) at (below.south) {\pgfornament[width=3.5cm]{88}};
   % \node [below=1mm of address] (addressLineDown) {\pgfornament[width=3.5cm]{88}};
-  \node [infoColor, below=of rightBoxTop, align=center] (address) {Weight: 250gm($\pm$)\\ \includegraphics[width=2cm, height=2cm]{PP_2000.png}\\ Prop(r): Md. Al-Helal\\Computer Science \& Engineering\\University of Dhaka\\ 01515-611989\\\faFacebookSquare{ }Honey\&Date\\\faGlobe{} www.vaijan.com.bd};
+  \node [infoColor, below=of rightBoxTop, align=center] (address) {Weight: 250gm($\pm$)\\
+  % \begin{tikzpicture}
+  %   \clip(0,0)circle[radius=1cm,];
+  %   \node[anchor = center] at (0, 0) {\includegraphics[scale=0.12]{Vaijan_final_logo_2_With_Drop_shadow.ai}};
+  % \end{tikzpicture}\\
+  \includegraphics[width=2cm]{PP_2000.png}\\
+  Prop(r): Md. Al-Helal\\Computer Science \& Engineering\\University of Dhaka\\ 01515-611989\\\faFacebookSquare{ }Honey\&Date\\\faGlobe{} www.vaijan.com.bd};
 \node[anchor=west, rotate=90, right=7.9cm of rightBoxLeft] (rightBoxRight) {\pgfornament[width=5cm]{46}};% rightbox right
 \node [right=3.7cm of bottom] (rightBoxBottom) {\pgfornament[width=5.2cm]{71}};%top H
 \node [anchor=north west] at (rightBoxTop.north -| rightBoxLeft.south)  {\pgfornament[width=2cm]{63}}; %top left
