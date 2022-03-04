@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{forloop}
+\usepackage{polyglossia}
+\usepackage{booktabs}
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali]{NikoshLightBAN}
+\usepackage[a4paper,left=0.1cm,right=0.1cm,top=0cm,bottom=0.1cm]{geometry}
+\newcommand{\aline}{\\\hline \arabic{theyflines} &&&\rule{0cm}{0.99cm}}
+\begin{document}
+\begin{center}
+%Extension Building - 1\\
+%যাদেরকে আমরা এখন পর্যন্ত ৩ দিনের জন্য বের করতে পারি নাই, তাদের নামের তালিকা 
+\end{center}
+\pagenumbering{gobble}
+\newcounter{theyflines}
+\noindent
+\bgroup
+\def\arraystretch{2.5}
+\begin{center}প্রথম বর্ষের ছাত্রদের জোড় - ২০২১ । সম্ভাব্য জুড়নেওয়ালী প্রথম বর্ষ + সাথীঃ ১৮০+ জন\\
+    (গরুর গোস্ত দিয়ে করার কথা ছিল, কিন্তু পরে মুরগী দিয়ে করা হয়েছিল এবং পায়েস যুক্ত করা হয়েছিল। )\end{center}
+\begin{tabular}{@{}lll|p{15cm}}
+\toprule
+ক্রমিক নং &  নাম &  পরিমাণ & আপনি দিতে ইচ্ছুক (+ চিহ্ন দিয়ে শুধু পরিমাণ লিখুন, আর অপর পৃষ্টায় নাম লিখুন )\\
+\toprule
+০১ & চাল & ২৫ কেজি &\\
+\hline
+০২ & গরু & ২৫ কেজি &\\
+\hline
+০৩ & তেল & ৫ কেজি &\\
+\hline
+০৪ & পেঁয়াজ & ৪ কেজি (বড়) &\\
+\hline
+০৫ & ঘি & ২৫০ গ্রাম &\\
+\hline
+০৬ & আলু বোখারা & ৪০০ গ্রাম &\\
+\hline
+০৭ & কিসমিস & ৪০০ গ্রাম &\\
+%\hline
+%০৮ & দুধ & ৫০০ গ্রাম &\\
+\hline
+০৮ & বিরিয়ানি মশলা & ৩ প্যাকেট &\\
+\hline
+০৯ & টক দই & ২ কেজি &\\
+\hline
+১০ & কাঁচা মরিচ & ২ কেজি &\\
+\hline
+১১ & আদা & ১ কেজি &\\
+\hline
+১২ & রসুন & ১ কেজি &\\
+\hline
+১৩ & লবণ & ১ কেজি &\\
+\hline
+১৪ & মশলা & ২০০ টাকার &\\
+\hline
+১৫ & শসা & ১০ কেজি &\\
+%\hline
+%১৫ & জায়ফল যতি & ৫০ টাকা &\\
+\bottomrule
+\end{tabular}
+\egroup
+\newpage
+\noindent
+\begin{tabular}{|p{5cm}|p{2cm}|p{7cm}|p{5cm}|}
+\toprule
+নাম & রুম নং & আইটেমের নাম(একের অধিক হলে কমা(,) দিয়ে লিখেন) & পরিমাণ
+\forloop{theyflines}{1}{\value{theyflines} < 26}{\aline}\\
+\toprule
+\end{tabular}
+\end{document}
